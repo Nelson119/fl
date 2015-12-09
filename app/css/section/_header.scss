@@ -4,11 +4,17 @@ header{
     background: $main-yellow;
     height: 30px;
     li{
+      img,svg{
+        margin-right:10px;
+      }
       &:before{
         content:'';
         display: inline-block;
         vertical-align: middle;
         height:30px;
+      }
+      &+li{
+        margin-left:30px;
       }
     }
     a{
@@ -32,6 +38,7 @@ header{
   }
   #menu{
     text-align:right;
+    z-index:1;
     &:before{
       height:90px;
       display: inline-block;
@@ -46,6 +53,8 @@ header{
         content:' ';
       }
       font-size: 0;
+      letter-spacing: 0;
+      word-spacing:0;
       float: left;
       margin:0;
     }
@@ -287,6 +296,7 @@ header{
     >ul{
       display: inline;
       letter-spacing: -1em;
+      line-height: 30px;
       >li{
         vertical-align: middle;
         display: inline-block;
@@ -310,6 +320,7 @@ header{
           }
           display: inline-block;
           height:30px;
+          line-height: 30px;
           vertical-align: middle;
           letter-spacing: 1px;
           padding:0;
@@ -339,7 +350,8 @@ header{
           opacity: 0;
           transform:rotateX(-90deg);
           transform-origin:center 30px 0;
-          transition-duration: 0.8s;
+          transition-duration: 0.4s;
+          display: block !important;
           li{
             transition-duration: 0.2s;
             height:37px;
@@ -374,6 +386,7 @@ header{
           ul{
             transform:none;
             opacity: inherit;
+            transition-duration: 0.8s;
           }
           hr{
             opacity: inherit;

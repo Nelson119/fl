@@ -3,6 +3,7 @@
 	no-use-before-define, no-trailing-spaces, 
 	no-mixed-spaces-and-tabs, no-multi-spaces,
 	key-spacing */
+/*global  $ */
 
 $(function(){
 	/*
@@ -36,6 +37,24 @@ $(function(){
 		}, 'xml');
 
 	});
-
-	$('#menu >ul').superfish();
+	if($('#menu >ul').length){
+		$('#menu >ul').superfish({
+			animation:   {opacity:'show', height:'show'}, 
+			animationOut:   {opacity:'hide', height:'hide'}
+		});
+	}
+	if($('#kv').length){
+		$('#kv ul').slick({
+			dots: true,
+			infinite: true,
+			slidesToShow: 1,
+			centerMode: true,
+			variableWidth: true,
+			autoplay: true,
+			autoplaySpeed: 3000,
+			pauseOnHover: true,
+			speed: 750
+		});
+	}
 });
+

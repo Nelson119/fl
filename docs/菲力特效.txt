@@ -1,36 +1,36 @@
-¡´ MENU hover : ¦V¤U¥X²{¡A¦rÅÜ¦â / LOGOÅÜ¶ê©³ªº ©ñ¤j¦AÁY¨ì­ì¤Ø¤o / ¦³³±¼v
+ï»¿â— MENU hover : å‘ä¸‹å‡ºç¾ï¼Œå­—è®Šè‰² / LOGOè®Šåœ“åº•çš„ æ”¾å¤§å†ç¸®åˆ°åŸå°ºå¯¸ / æœ‰é™°å½±
 https://www.kimal.jp/
 coed : http://designmodo.com/css3-dropdown-menu/
 
-¡´ ¤U©ÔMENU hover : ½bÀY©¹¥k²¾
+â— ä¸‹æ‹‰MENU hover : ç®­é ­å¾€å³ç§»
 
-¡´ BANNER¡B¬ÛÃ¯ ¶êÂIÂIhover
+â— BANNERã€ç›¸ç°¿ åœ“é»é»hover
 http://www.morisawa.co.jp/
 code : http://tympanus.net/Development/DotNavigationStyles/
 
-¡´ BANNER º¥²H¤Á´«(Fade In-Out)
+â— BANNER æ¼¸æ·¡åˆ‡æ›(Fade In-Out)
 https://www.ppi.jp/
 
-¡´ CONCEPT hover : ¶]¥Xtitle & ¤å¦r¤¶²Ğ
+â— CONCEPT hover : è·‘å‡ºtitle & æ–‡å­—ä»‹ç´¹
 http://shaprise.jp/
 (demo1 http://tympanus.net/Tutorials/CircleHoverEffects/index.html)
 
-¡´ ¥ş®Õ¤½§i¤@Äı hover 
+â— å…¨æ ¡å…¬å‘Šä¸€è¦½ hover 
 http://sketchybusiness.io/
 
-¡´ ¥ş®Õ¤½§i¡BBLOG ¼ĞÃD hover : ¥[©³½u
+â— å…¨æ ¡å…¬å‘Šã€BLOG æ¨™é¡Œ hover : åŠ åº•ç·š
 
-¡´ ¾Ç®Õ·s»D¡B¬ÛÃ¯¡B®Õ°È¦æ¨Æ¾ä¡BFB hover : ¹Ï¤ù©ñ¤j + ¹Ï¤ùÅÜ²H (¾ã­Ó¥[³z©ú¥Õ¾B¸n)
+â— å­¸æ ¡æ–°èã€ç›¸ç°¿ã€æ ¡å‹™è¡Œäº‹æ›†ã€FB hover : åœ–ç‰‡æ”¾å¤§ + åœ–ç‰‡è®Šæ·¡ (æ•´å€‹åŠ é€æ˜ç™½é®ç½©)
 https://www.ppi.jp/
 
-¡´ °¼Ãä¤p¿ï³æ ÂI¶}¨Ì§Ç¥X²{ hover¿ï¶µ : ³±¼v¥[­«
+â— å´é‚Šå°é¸å–® é»é–‹ä¾åºå‡ºç¾ hoveré¸é … : é™°å½±åŠ é‡
 code : http://www.cssscript.com/path-style-animated-radial-menu-bloomingmenu-js/
 
-¡´ ¬ÛÃö³sµ² hover : ¹Ï¤ùÅÜ²H (¾ã­Ó¥[³z©ú¥Õ¾B¸n)
+â— ç›¸é—œé€£çµ hover : åœ–ç‰‡è®Šæ·¡ (æ•´å€‹åŠ é€æ˜ç™½é®ç½©)
 
-¡´ footer MENU hover : ¥[©³½u
+â— footer MENU hover : åŠ åº•ç·š
 
-¡´ footer LINK hover : ¶ê©³©ñ¤j
+â— footer LINK hover : åœ“åº•æ”¾å¤§
 
-¡´ ·s»D¡B¤½§i °¼Äæ - ¤ë¾ä Widget
+â— æ–°èã€å…¬å‘Š å´æ¬„ - æœˆæ›† Widget
 https://creativemarket.com/ondrejlechan/2245-Flat-Minimalistic-Calendar-Widgets

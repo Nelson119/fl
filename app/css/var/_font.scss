@@ -1,5 +1,19 @@
 $icon-font-path: '../fonts/';
 
+//
+// 字級
+// 30 > 大大標
+// 28 > 大標
+// 24 > 中標
+// 22 > 內頁文章標題
+// 20 > 側邊欄標題、行事曆tab
+// 18 > 按鈕字
+// 16 > 小標
+// 14 > 縮略文、內文、選單、作者
+// 13 > Navi、日期、tag、作者、麵包屑、頁碼
+// 11 (版權聲明)
+//
+
 @font-face { 
 	font-family: 'msjh-arial'; 
 	src: local('微軟正黑體')
@@ -31,3 +45,37 @@ $icon-font-path: '../fonts/';
 }
 
 $main-font: 'msjh-arial';
+$base-font-size: 13px;
+$base-font-size-sm: 12;
+
+.fontsize-30 {
+	font-size: percentage(30px/$base-font-size);
+}
+.fontsize-28 {
+	font-size: percentage(28px/$base-font-size);
+}
+.fontsize-24 {
+	font-size: percentage(24px/$base-font-size);
+}
+.fontsize-22 {
+	font-size: percentage(22px/$base-font-size);
+}
+.fontsize-20 {
+	font-size: percentage(20px/$base-font-size);
+}
+.fontsize-18 {
+	font-size: percentage(18px/$base-font-size);
+}
+.fontsize-16 {
+	font-size: percentage(16px/$base-font-size);
+}
+.fontsize-14 {
+	font-size: percentage(14px/$base-font-size);
+}
+.fontsize-13 {
+	font-size: percentage(13px/$base-font-size);
+}
+.fontsize-11 {
+	font-size: percentage(11px/$base-font-size);
+}
+

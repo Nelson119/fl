@@ -21,9 +21,12 @@ body {
 	font-style: normal;
 	text-rendering: optimizelegibility;
 	font-family: $main-font,cursive;
-	font-size:13px;
+	font-size: $base-font-size;
+	letter-spacing:1px;
+	word-spacing:1px;
+
 	@media screen and (max-width: 768px) {
-		font-size:12px;
+		font-size: $base-font-size-sm;
 	}
 	a{
 		color:$main-text-color;
@@ -67,5 +70,9 @@ body {
 @import "page/common";
 
 @import "section/header";
+
+@import "section/kv";
+
+@import "section/content";
 
 @import "section/footer";
