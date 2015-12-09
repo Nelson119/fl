@@ -1,0 +1,385 @@
+header{
+  box-shadow:1px 1px 3px rgba(0,0,0,0.2);
+  .fore{
+    background: $main-yellow;
+    height: 30px;
+    li{
+      &:before{
+        content:'';
+        display: inline-block;
+        vertical-align: middle;
+        height:30px;
+      }
+    }
+    a{
+      color: $main-white;
+      &:hover,&:active{
+        color: $main-white;
+      }
+      img{
+        width:13px;
+      }
+      svg{
+        display: inline-block;
+        vertical-align: middle;
+        width:13px;
+        path{
+          fill: #fff;
+        }
+      }
+      vertical-align: middle;
+    }
+  }
+  #menu{
+    text-align:right;
+    &:before{
+      height:90px;
+      display: inline-block;
+      vertical-align: middle;
+      content:' ';
+    }
+    h1{
+      &:before{
+        height:90px;
+        display: inline-block;
+        vertical-align: middle;
+        content:' ';
+      }
+      font-size: 0;
+      float: left;
+      margin:0;
+    }
+
+    ///  設定圖片和顏色
+    >ul{
+      >li{
+        img{
+          width:25px;
+        }
+        svg{
+          width:25px;
+          circle,path{
+            transition-duration:0.2s;
+          }
+        }
+        ul{
+          color:$main-white;
+        }
+        &:nth-child(1){
+          svg{
+            circle{
+              fill:rgba(0,0,0,0);
+            }
+            path{
+              fill:$main-red;
+            }
+          }
+          a, i{
+            color:$main-red;
+          }
+          hr{
+            &:before{
+              color: $main-red;
+            }
+            border-color: $main-red;
+          }
+          ul{
+            a{
+              color:$main-white;
+            }
+            &:before{
+              color:$main-red;
+            }
+            li{
+              background: $main-red;
+              &:hover{
+                background: $main-red;
+              }
+            }
+          }
+          &:hover{
+            svg{
+              circle{
+                fill:$main-red;
+              }
+              path{
+                fill:$main-white;
+              }
+            }
+
+          }
+        }
+        &:nth-child(2){
+          svg{
+            circle{
+              fill:$transparent;
+            }
+            path{
+              fill:$main-yellow;
+            }
+          }
+          a, i{
+            color:$main-yellow;
+          }
+          hr{
+            &:before{
+              color: $main-yellow;
+            }
+            border-color: $main-yellow;
+          }
+          ul{
+            a{
+              color:$main-white;
+            }
+            &:before{
+              color:$main-yellow;
+            }
+            li{
+              background: $main-yellow;
+              &:hover{
+                background: $main-yellow-hover;
+              }
+            }
+          }
+          &:hover{
+            svg{
+              circle{
+                fill:$main-yellow;
+              }
+              path{
+                fill:$main-white;
+              }
+            }
+          }
+        }
+        &:nth-child(3){
+          svg{
+            circle{
+              fill:$transparent;
+            }
+            path{
+              fill:$main-green;
+            }
+          }
+          a, i{
+            color:$main-green;
+          }
+          hr{
+            &:before{
+              color: $main-green;
+            }
+            border-color: $main-green;
+          }
+          ul{
+            a{
+              color:$main-white;
+            }
+            &:before{
+              color:$main-green;
+            }
+            li{
+              background: $main-green;
+              &:hover{
+                background: $main-green-hover;
+              }
+            }
+          }
+          &:hover{
+            svg{
+              circle{
+                fill:$main-green;
+              }
+              path{
+                fill:$main-white;
+              }
+            }
+          }
+        }
+        &:nth-child(4){
+          svg{
+            circle{
+              fill:$transparent;
+            }
+            path{
+              fill:$main-orange;
+            }
+          }
+          a, i{
+            color:$main-orange;
+          }
+          hr{
+            &:before{
+              color: $main-orange;
+            }
+            border-color: $main-orange;
+          }
+          ul{
+            a{
+              color:$main-white;
+            }
+            &:before{
+              color:$main-orange;
+            }
+            li{
+              background: $main-orange;
+              &:hover{
+                background: $main-orange-hover;
+              }
+            }
+          }
+          &:hover{
+            svg{
+              circle{
+                fill:$main-orange;
+              }
+              path{
+                fill:$main-white;
+              }
+            }
+          }
+        }
+        &:nth-child(5){
+          svg{
+            circle{
+              fill:$transparent;
+            }
+            path{
+              fill:$main-blue;
+            }
+          }
+          a, i{
+            color:$main-blue;
+          }
+          hr{
+            &:before{
+              color: $main-blue;
+            }
+            border-color: $main-blue;
+          }
+          ul{
+            a{
+              color:$main-white;
+            }
+            &:before{
+              color:$main-blue;
+            }
+            li{
+              background: $main-blue;
+              &:hover{
+                background: $main-blue;
+              }
+            }
+          }
+          &:hover{
+            svg{
+              circle{
+                fill:$main-blue;
+              }
+              path{
+                fill:$main-white;
+              }
+            }
+          }
+        }
+      }
+    }
+    ///  設定尺寸和內外距格線
+    >ul{
+      display: inline;
+      letter-spacing: -1em;
+      >li{
+        vertical-align: middle;
+        display: inline-block;
+        position:relative;
+        width:140px;
+        text-align:center;
+        transition-duration: 0.2s;
+        &+li{
+          border-left: 1px dashed $nav-dash-color;
+        }
+        img,svg{
+          vertical-align: middle;
+          margin-right:10px;
+        }
+        a{
+          &:before{
+            content:' ';
+            display: inline-block;
+            vertical-align: middle;
+            height:30px;
+          }
+          display: inline-block;
+          height:30px;
+          vertical-align: middle;
+          letter-spacing: 1px;
+          padding:0;
+        }
+        hr{
+          position: relative;
+          opacity: 0;
+          &:before{
+            content: "";
+            font-family: fontawesome;
+            left: 0%;
+            position: absolute;
+            top: -13px;
+            transition-duration: 0.8s;
+            width: 100%;
+          }
+          bottom: 0;
+          margin: 0 0 -31px;
+          position: absolute;
+          width: 100%;
+        }
+        ul{
+          position:absolute;
+          padding-top:30px;
+          width:100%;
+          overflow: hidden;
+          opacity: 0;
+          transform:rotateX(-90deg);
+          transform-origin:center 30px 0;
+          transition-duration: 0.8s;
+          li{
+            transition-duration: 0.2s;
+            height:37px;
+            width:100%;
+            padding:0 5px;
+            &:before{
+              content:' ';
+              display: inline-block;
+              vertical-align: middle;
+              height:37px;
+            }
+            a{
+              &:before{
+                content:' ';
+                display: inline-block;
+                vertical-align: middle;
+                height:37px;
+              }
+              height:100%;
+              width:100%;
+              vertical-align: middle;
+            }
+            &+li{
+              a{
+                border-top:1px solid $main-white;
+              }
+            }
+          }
+        }
+
+        &:hover{
+          ul{
+            transform:none;
+            opacity: inherit;
+          }
+          hr{
+            opacity: inherit;
+          }
+        }
+      }
+    }
+  }
+}

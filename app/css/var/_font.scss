@@ -1,0 +1,33 @@
+$icon-font-path: '../fonts/';
+
+@font-face { 
+	font-family: 'msjh-arial'; 
+	src: local('微軟正黑體')
+		, local("Lantinghei SC")
+		, local("STHeiti")
+		, local("メイリオ")
+		, local("Meiryo")
+		, local("ヒラギノ角ゴ Pro w3")
+		, local("Hiragino Kaku Gothic Pro")
+		, local("Osaka")
+		, local("STXihei")
+		, local("HEITI TC")
+		, local("黑體-繁")
+		, local("黑體");
+}
+@font-face {
+	font-family: 'msjh-arial';
+	src: local('Arial')
+		, local("Segoe UI")
+		, local("Verdana")
+		, local("ＭＳ Ｐゴシック")
+		, local("MS P Gothic")
+		, local("Helvetica Neue")
+		, local("Helvetica")
+		, local("sans-serif");
+	font-weight: normal;
+	font-style: normal;
+	unicode-range: U+00-024F;
+}
+
+$main-font: 'msjh-arial';

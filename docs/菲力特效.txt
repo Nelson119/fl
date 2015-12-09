@@ -1,0 +1,36 @@
+● MENU hover : 向下出現，字變色 / LOGO變圓底的 放大再縮到原尺寸 / 有陰影
+https://www.kimal.jp/
+coed : http://designmodo.com/css3-dropdown-menu/
+
+● 下拉MENU hover : 箭頭往右移
+
+● BANNER、相簿 圓點點hover
+http://www.morisawa.co.jp/
+code : http://tympanus.net/Development/DotNavigationStyles/
+
+● BANNER 漸淡切換(Fade In-Out)
+https://www.ppi.jp/
+
+● CONCEPT hover : 跑出title & 文字介紹
+http://shaprise.jp/
+(demo1 http://tympanus.net/Tutorials/CircleHoverEffects/index.html)
+
+● 全校公告一覽 hover 
+http://sketchybusiness.io/
+
+● 全校公告、BLOG 標題 hover : 加底線
+
+● 學校新聞、相簿、校務行事曆、FB hover : 圖片放大 + 圖片變淡 (整個加透明白遮罩)
+https://www.ppi.jp/
+
+● 側邊小選單 點開依序出現 hover選項 : 陰影加重
+code : http://www.cssscript.com/path-style-animated-radial-menu-bloomingmenu-js/
+
+● 相關連結 hover : 圖片變淡 (整個加透明白遮罩)
+
+● footer MENU hover : 加底線
+
+● footer LINK hover : 圓底放大
+
+● 新聞、公告 側欄 - 月曆 Widget
+https://creativemarket.com/ondrejlechan/2245-Flat-Minimalistic-Calendar-Widgets

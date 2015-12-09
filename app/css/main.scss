@@ -1,0 +1,71 @@
+$icon-font-path: '../fonts/';
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/font-awesome/scss/font-awesome.scss";
+// endbower
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+@import "var/common";
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-feature-settings: "liga";
+	font-style: normal;
+	text-rendering: optimizelegibility;
+	font-family: $main-font,cursive;
+	font-size:13px;
+	@media screen and (max-width: 768px) {
+		font-size:12px;
+	}
+	a{
+		color:$main-text-color;
+		transition-duration: 0.15s;
+		&:focus,&:hover,&:active,&.active{
+			transition-duration: 0.25s;
+			color:$main-yellow;
+			outline:0;
+			text-decoration: none;
+			img{
+				border:0;
+			}
+		}
+		img{
+			border:0;
+		}
+	}
+	ul{
+		margin:0;
+		padding:0;
+		li{
+			list-style: none;
+			display: inline-block;
+		}
+	}
+	img.svg{
+		visibility: hidden;
+	}
+	svg.svg{
+		>*{
+			fill:$transparent;
+		}
+	}
+
+	.container{
+		max-width:1200px;
+		width:100%;
+	}
+}
+
+@import "page/common";
+
+@import "section/header";
+
+@import "section/footer";
