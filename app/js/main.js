@@ -56,5 +56,29 @@ $(function(){
 			speed: 750
 		});
 	}
+
+    var socialMenu = new BloomingMenu({
+      startAngle: 90,
+      endAngle: 270,
+      radius: 100,
+      itemsNum: 5,
+      itemAnimationDelay: 0.08,
+      CSSClassPrefix: 'social-'
+    });
+    socialMenu.render();
+    var localeMenu = new BloomingMenu({
+      startAngle: 200,
+      endAngle: 160,
+      radius: 100,
+      itemsNum: 2,
+      itemAnimationDelay: 0.08,
+      CSSClassPrefix: 'locale-'
+    });
+    localeMenu.render();
+    // Prevents "elastic scrolling" on Safari
+    document.addEventListener('touchmove', function(event) {
+      'use strict'
+      event.preventDefault()
+    })
 });
 

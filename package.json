@@ -37,5 +37,8 @@
         "single"
       ]
     }
+  },
+  "dependencies": {
+    "blooming-menu": "^1.0.2"
   }
 }
