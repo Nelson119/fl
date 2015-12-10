@@ -3,7 +3,7 @@
 	no-use-before-define, no-trailing-spaces, 
 	no-mixed-spaces-and-tabs, no-multi-spaces,
 	key-spacing */
-/*global  $ */
+/*global  $, BloomingMenu */
 
 $(function(){
 	/*
@@ -75,10 +75,5 @@ $(function(){
       CSSClassPrefix: 'locale-'
     });
     localeMenu.render();
-    // Prevents "elastic scrolling" on Safari
-    document.addEventListener('touchmove', function(event) {
-      'use strict'
-      event.preventDefault()
-    })
 });
 
