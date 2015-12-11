@@ -75,5 +75,24 @@ $(function(){
       CSSClassPrefix: 'locale-'
     });
     localeMenu.render();
+    $('.locale-item, .social-item').each(function(i, d){
+    	var o = this;
+
+    	var imgURL = $('button', o).css('background-image').replace(/url\(|\)|'|"/ig, '');
+
+    	$.get(imgURL, function(data) {
+			// Get the SVG tag, ignore the rest
+			var $svg = $(data).find('svg');
+
+			// Remove any invalid XML tags as per http://validator.w3.org
+			$svg = $svg.removeAttr('xmlns:a');
+
+			// Replace image with new SVG
+			$('button', o).append($svg);
+
+			$('button', o).css('background-image', 'url()');
+
+		}, 'xml');
+    });
 });
 

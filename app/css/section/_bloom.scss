@@ -1,6 +1,6 @@
 .locale-container{
   position: fixed !important;
-  top:160px!important;
+  top:270px!important;
   right: 0px!important;
   left: auto!important;
   width:40px!important;
@@ -13,7 +13,7 @@
     width:46px;
     height:41px;
     &.is-active {
-      transform: rotate(45deg) translateY(2px);
+      transform: rotate(10deg) translateY(2px);
     }
     &:hover{
       box-shadow:none;
@@ -37,7 +37,17 @@
         box-shadow:none;
         &:hover{
           box-shadow:none;
+          path{
+            fill:#367ECF;
+          }
         }
+        circle{
+          fill:#9DE1F0;
+        }
+        path{
+          fill:#fff;
+          transition-duration:0.2s;
+        } 
       }
     }
     &:nth-child(1){
@@ -59,6 +69,130 @@
       }
       button{
         background:url(../img/locale/button-zh-tw.svg) center center no-repeat;
+      }
+    }
+  }
+}
+
+.social-container{
+  position: fixed !important;
+  top:130px!important;
+  right: 0px!important;
+  left: auto!important;
+  width:40px!important;
+  height:40px!important;
+  button.social-main{
+    font-size: 0;
+    color:rgba(0,0,0,0);
+    background:url(../img/share/button.svg) center center no-repeat;
+    background-size:100% auto;
+    width:46px;
+    height:41px;
+    &.is-active {
+      transform: rotate(10deg) translateY(2px);
+    }
+    &:hover{
+      box-shadow:none;
+      transform: scale(1.2);
+    }
+  }
+  .social-item{
+    &:hover{
+      box-shadow:none;
+    }
+    .social-item-btn-wrapper{
+      width:41px;
+      height:41px;
+      margin-left: -5px;
+      margin-top: 5px;
+      background-color:rgba(0,0,0,0);
+      box-shadow:none;
+      button{
+        background-size:100% auto;
+        background-color:rgba(0,0,0,0);
+        box-shadow:none;
+        &:hover{
+          box-shadow:none;
+        }
+        path{
+          fill:#fff;
+          transition-duration:0.2s;
+        } 
+      }
+    }
+    &:nth-child(1){
+      &.is-active{
+        button{
+          transform: translate(13px, -44px);
+        }
+      }
+      button{
+        background:url(../img/share/button-wx.svg) center center no-repeat;
+        &:hover{
+          path{
+            fill:#F65E0C;
+          }
+        }
+      }
+    }
+    &:nth-child(2){
+      &.is-active{
+        button{
+          transform: translate(42px, -28px);
+        }
+      }
+      button{
+        background:url(../img/share/button-yt.svg) center center no-repeat;
+        &:hover{
+          path{
+            fill:#DC2A25;
+          }
+        }
+      }
+    }
+    &:nth-child(3){
+      &.is-active{
+        button{
+          transform: translate(48px, 5px);
+        }
+      }
+      button{
+        background:url(../img/share/button-line.svg) center center no-repeat;
+        &:hover{
+          path{
+            fill:#00C300;
+          }
+        }
+      }
+    }
+    &:nth-child(4){
+      &.is-active{
+        button{
+          transform: translate(32px, 31px);
+        }
+      }
+      button{
+        background:url(../img/share/button-gp.svg) center center no-repeat;
+        &:hover{
+          path{
+            fill:#DC2A25;
+          }
+        }
+      }
+    }
+    &:nth-child(5){
+      &.is-active{
+        button{
+          transform: translate(0px, 45px);
+        }
+      }
+      button{
+        background:url(../img/share/button-fb.svg) center center no-repeat;
+        &:hover{
+          path{
+            fill:#4862A3;
+          }
+        }
       }
     }
   }

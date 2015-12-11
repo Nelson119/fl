@@ -1,0 +1,16 @@
+﻿menu style :
+
+http://www.parrottalks.com/note/article/YelhRn?utm_campaign=201509-manual&utm_source=facebook&utm_medium=group-post&utm_term=tw_uiux_designers&utm_content=fb-emoji-wireframe-patent
+
+
+http://codepen.io/lbebber/full/pvwZJp/
+
+http://tympanus.net/Development/ElasticSVGElements/circlemenu.html
+
+http://danartinho.github.io/WCircleMenu/
+
+http://jquery-plugins.net/circle-menu-customizable-circular-menu-jquery-plugin
+
+http://www.cssscript.com/path-style-animated-radial-menu-bloomingmenu-js/
+
+http://codepen.io/whqet/pen/ykwoH
