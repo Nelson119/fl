@@ -1,10 +1,14 @@
 .locale-container{
+  @media screen and (max-width: 1170px) {
+    display: none;
+  }
   position: fixed !important;
-  top:270px!important;
+  top:390px!important;
   right: 0px!important;
   left: auto!important;
   width:40px!important;
   height:40px!important;
+  z-index: 10;
   button.locale-main{
     font-size: 0;
     color:rgba(0,0,0,0);
@@ -75,12 +79,16 @@
 }
 
 .social-container{
+  @media screen and (max-width: 1170px) {
+    display: none;
+  }
   position: fixed !important;
-  top:130px!important;
+  top:250px!important;
   right: 0px!important;
   left: auto!important;
   width:40px!important;
   height:40px!important;
+  z-index: 10;
   button.social-main{
     font-size: 0;
     color:rgba(0,0,0,0);

@@ -38,12 +38,25 @@ $(function(){
 
 	});
 	if($('#menu >ul').length){
+		$('body').append($('#menu ul:eq(0)').clone().addClass('left-menu'));
 		$('#menu >ul').superfish({
 			animation:   {opacity:'show', height:'show'}, 
 			animationOut:   {opacity:'hide', height:'hide'}
 		});
+		$('#slidedown-menu').on('click', function(ev){
+			if($('header').hasClass('on')){
+				$('header').removeClass('on');
+				$('body').removeClass('menuon');
+				$('header .mobile-menu li').removeClass('on');
+			}else{
+				TweenMax.set('html,body', {scrollTop: 0});
+				$('header').addClass('on');
+				$('body').addClass('menuon');
+			}
+		});
 	}
 	if($('#kv').length){
+		$('#kv').clone().attr('id', 'kvm').removeAttr('class').insertAfter($('#kv'));
 		$('#kv ul').slick({
 			dots: true,
 			infinite: true,
@@ -51,6 +64,16 @@ $(function(){
 			centerMode: true,
 			variableWidth: true,
 			autoplay: true,
+			autoplaySpeed: 3000,
+			pauseOnHover: true,
+			speed: 750
+		});
+		$('#kvm ul').slick({
+			// dots: true,
+			infinite: true,
+			slidesToShow: 1,
+			variableWidth: false,
+			// autoplay: true,
 			autoplaySpeed: 3000,
 			pauseOnHover: true,
 			speed: 750
