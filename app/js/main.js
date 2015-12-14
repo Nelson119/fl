@@ -3,7 +3,7 @@
 	no-use-before-define, no-trailing-spaces, 
 	no-mixed-spaces-and-tabs, no-multi-spaces,
 	key-spacing */
-/*global  $, BloomingMenu */
+/*global  $, BloomingMenu, TweenMax */
 
 $(function(){
 	if($('#menu >ul').length){
@@ -41,7 +41,7 @@ $(function(){
 					lineHeight:'3em',
 					opacity: 1,
 					onComplete: function(){
-						$('header, footer, .page, #kv, #kvm').css('position','fixed');
+						$('header, footer, .page, #kv, #kvm').css('position', 'fixed');
 					}
 				}
 			);
@@ -215,7 +215,7 @@ $(function(){
 				}else{
 					$(d).removeClass('on');
 				}
-			})
+			});
 		});
 	}());
 	/*
