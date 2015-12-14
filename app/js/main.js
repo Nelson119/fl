@@ -49,7 +49,7 @@ $(function(){
 				$('.left-menu >ul'),
 				0.55,
 				{
-					marginTop:'100px'
+					marginTop:'70px'
 				}
 			);
 
