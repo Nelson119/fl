@@ -209,7 +209,7 @@ $(function(){
 			$(arr).each(function(i, d){
 				if( 
 					scrollTop > $(d).offset().top - $(window).height() + $(d).height() / 2 
-					&& scrollTop < $(d).offset().top + $(d).height() / 2
+					&& scrollTop < $(d).offset().top 
 				){
 					$(d).addClass('on');
 				}else{

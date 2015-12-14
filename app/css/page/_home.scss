@@ -6,23 +6,6 @@
   background-color: $background-f7;
   padding-top:35px;
   padding-bottom: 60px;
-  h3{
-    font-weight: bold;
-    text-transform: uppercase;
-    display: inline-block;
-    position:relative;
-    z-index: 1;
-    &:before{
-      position:absolute;
-      bottom:0;
-      height:15px;
-      width: 100%;
-      background-color:$main-yellow;
-      opacity:0.8;
-      content:' ';
-      z-index: -1;
-    }
-  }
   h4{
     font-weight: 600;
   }
@@ -97,6 +80,10 @@
             line-height: 1.2em;
             text-align:center;
             width:70%;
+            left:18%;
+          }
+          @media screen and (max-width: 1170px) {
+            top:50%;
             left:18%;
           }
         }
@@ -209,27 +196,11 @@
   padding-bottom:60px;
   .title{
     margin:60px 0 27px;
-    position:relative;
-    sub{
-      bottom:0;
-      margin-left: 1em;
-    }
   }
   h3{
-    display: inline-block;
-    font-weight: bold;
     border-bottom:3px solid $main-red;
-    margin:0;
-    padding-bottom:20px;
     &:after{
-      position:absolute;
-      bottom:0;
-      width:100%;
-      content:' ';
-      height:3px;
       background-color:$main-red;
-      left:0;
-      opacity:0.5;
     }
   }
   figure{
@@ -321,55 +292,31 @@
       }
     }
   }
+  h6{
+    background:$main-red;
+
+    a{
+      &:after{
+        border-color: transparent transparent transparent $main-red;
+      }
+    }
+  }
 }
 
 .news{
   background-color:$background-lightgreen;
   .title{
     margin:60px 0 27px;
-    position:relative;
-    sub{
-      bottom:0;
-      margin-left: 1em;
-    }
   }
   h3{
-    display: inline-block;
-    font-weight: bold;
-    border-bottom:3px solid $main-green;
-    margin:0;
-    padding-bottom:20px;
+    border-bottom:3px solid $news-greeen;
     &:after{
-      position:absolute;
-      bottom:0;
-      width:100%;
-      content:' ';
-      height:3px;
-      background-color:$main-green;
-      left:0;
-      opacity:0.5;
+      background-color:$news-greeen;
     }
   }
   ul{
-    margin:45px -30px 0;
     >li{
-      padding:0 30px 60px;
-      .box{
-        background-color: $main-white;
-        box-shadow:rgba(0,0,0,0.05) 1px 1px 5px;
-        padding-bottom:30px;
-        position:relative;
-        &:after{
-          content: ' ';
-          border-width:7px;
-          border-style:solid;
-          border-color:transparent $main-yellow $main-yellow transparent;
-          position:absolute;
-          bottom:0;
-          right: 0;
-        }
-      }
-      .caption{
+      .category{
         position:absolute;
         color:$main-white;
         z-index: 1;
@@ -377,21 +324,9 @@
         top:0;
         background-color:$main-yellow;
         &:after{
-          content:'．';
-          font-size: 320%;
-          position:absolute;
-          line-height: 35%;
-          right:-20px;
         }
         &:before{
           background-color:$main-yellow;
-          content:' ';
-          position: absolute;
-          transform: rotateZ(-45deg) translateX(-2px) translateY(2px);
-          transform-origin: bottom left 0;
-          left:100%;
-          padding:16px 0 0 15.5px;
-          z-index:-1;
         }
       }
       figure{
@@ -400,10 +335,20 @@
       .date{
         color:$main-text-lightgrey;
         padding:15px 0 0 90px;
+        @media screen and (max-width: 1170px) {
+          padding:0 15px;
+        }
         img{
           position:absolute;
           width:60px;
           margin:-45px 0 0 -75px;
+          @media screen and (max-width: 1170px) {
+            display: block;
+            float: left;
+            margin: -25px 0 0 0px;
+            position: relative;
+            width: 40px;
+          }
         }
       }
       h4,p{
@@ -415,28 +360,6 @@
       p{
 
       }
-      &.green{
-        .caption{
-          background-color:$main-green;
-          &:before{
-            background-color:$main-green;
-          }
-        }
-        .box:after{
-          border-color:transparent $main-green $main-green transparent;
-        }
-      }
-      &.blue{
-        .caption{
-          background-color:$main-blue;
-          &:before{
-            background-color:$main-blue;
-          }
-        }
-        .box:after{
-          border-color:transparent $main-blue $main-blue transparent;
-        }
-      }
       @media screen and (max-width: 1170px) {
         &:nth-child(8) ~li{
           display: none;
@@ -444,26 +367,55 @@
       }
     }
   }
+  h6{
+    position:absolute;
+    top:0;
+    right:0;
+    background:$news-greeen;
+    padding-right:15px;
+    margin:0;
+
+    a{
+      background:transparent url(../img/home/view-more.png) right center no-repeat;
+      color:$main-white; 
+      padding:7px 12px;
+      display: inline-block;
+      &:after{
+        border-color: transparent transparent transparent $news-greeen;
+        border-style: solid;
+        border-top-width: 14px;
+        border-right-width: 14px;
+        border-bottom-width: 14px;
+        border-left-width: 0;
+        content: " ";
+        display: block;
+        height: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        opacity: 0.5;
+        background:#fff;
+
+      }
+      &:hover{
+        &:after{
+          width:15px;
+          transition-duration: 0.5s;
+          border-left-width: 14px;
+        }
+      }
+    }
+  }
 }
 
 .life{
+  position:relative;
   padding-bottom: 40px;
   background:rgba(0,0,0,0) no-repeat center center / 100% 100% url(../img/home/life-bg.png);
-  h3{
-    font-weight: bold;
-    text-transform: uppercase;
-    display: inline-block;
-    position:relative;
-    z-index: 1;
+  h3.brush{
     &:before{
-      position:absolute;
-      bottom:0;
-      height:15px;
-      width: 100%;
       background-color:$main-blue;
-      opacity:0.4;
-      content:' ';
-      z-index: -1;
     }
   }
   .slide-container{
@@ -481,52 +433,12 @@
     }
   }
   ul{
-    margin:45px -30px 0;
     li{
-      padding:0 30px 60px;
-      position:relative;
-      .box{
-        background-color: $main-white;
-        box-shadow:rgba(0,0,0,0.05) 1px 1px 5px;
-        padding-bottom:30px;
-        position:relative;
-        &:after{
-          content: ' ';
-          border-width:7px;
-          border-style:solid;
-          border-color:transparent $main-yellow $main-yellow transparent;
-          position:absolute;
-          bottom:0;
-          right: 0;
-        }
-      }
-      figure{
-      }
-      .caption{
-        position:relative;
-        // bottom:-35px;
-        color:$main-white;
-        z-index: 1;
-        margin:0;
-        display: inline-block;
+      .category{
         padding:3px 7px 0 10px;
-        background-color:$main-yellow;
-        &:after{
-          content:'．';
-          font-size: 320%;
-          position:absolute;
-          line-height: 35%;
-          right:-20px;
-        }
+        margin:0;
         &:before{
-          background-color:$main-yellow;
-          content:' ';
-          position: absolute;
-          transform: rotateZ(-45deg) translateX(-2px) translateY(2px);
-          transform-origin: bottom left 0;
-          left:100%;
-          padding:16px 0 0 15.5px;
-          z-index:-1;
+          padding:14px 0 0 16px;
         }
       }
       .date{
@@ -541,28 +453,6 @@
       h4{
         font-weight: bold;
         margin-bottom:40px;
-      }
-      &.green{
-        .caption{
-          background-color:$main-green;
-          &:before{
-            background-color:$main-green;
-          }
-        }
-        .box:after{
-          border-color:transparent $main-green $main-green transparent;
-        }
-      }
-      &.blue{
-        .caption{
-          background-color:$main-blue;
-          &:before{
-            background-color:$main-blue;
-          }
-        }
-        .box:after{
-          border-color:transparent $main-blue $main-blue transparent;
-        }
       }
     }
   }
@@ -596,6 +486,20 @@
       }
     }
   }
+  h6{
+    bottom:25px;
+    left:50%;
+    margin-left:-60px;
+    right:auto;
+    top:auto;
+    background:$main-blue;
+
+    a{
+      &:after{
+        border-color: transparent transparent transparent $main-blue;
+      }
+    }
+  }
 }
 
 .blog{
@@ -604,27 +508,20 @@
   background-color:$background-white;
   .title{
     margin:60px 0 27px;
-    position:relative;
-    sub{
-      bottom:0;
-      margin-left: 1em;
-    }
   }
   h3{
-    display: inline-block;
-    font-weight: bold;
     border-bottom:3px solid $main-orange;
-    margin:0;
-    padding-bottom:20px;
     &:after{
-      position:absolute;
-      bottom:0;
-      width:100%;
-      content:' ';
-      height:3px;
       background-color:$main-orange;
-      left:0;
-      opacity:0.5;
+    }
+  }
+  h6{
+    background:$main-orange;
+
+    a{
+      &:after{
+        border-color: transparent transparent transparent $main-orange;
+      }
     }
   }
   .row{
@@ -664,55 +561,15 @@
       white-space:nowrap;
       color:$main-orange;
       vertical-align: bottom;
-      sub{
-        display: inline-block;
-        color:$main-white;
+      .category{
         z-index: 1;
         padding:2px 7px 2px 10px;
         line-height: 1.5em;
         vertical-align: bottom;
-        position: relative;
         top:0;
         margin-left:20px;
-        &:after{
-          content:'．';
-          font-size: 320%;
-          position:absolute;
-          line-height: 35%;
-          right:-20px;
-        }
         &:before{
-          content:' ';
-          position: absolute;
-          transform: rotateZ(-45deg) translateX(-4px) translateY(3px);
-          transform-origin: bottom left 0;
-          left:100%;
           padding:17px 0 0 17px;
-          z-index:-1;
-        }
-      }
-    }
-    .green{
-      sub{
-        background-color:$main-green;
-        &:before{
-          background-color:$main-green;
-        }
-      }
-    }
-    .blue{
-      sub{
-        background-color:$main-blue;
-        &:before{
-          background-color:$main-blue;
-        }
-      }
-    }
-    .yellow{
-      sub{
-        background-color:$main-yellow;
-        &:before{
-          background-color:$main-yellow;
         }
       }
     }

@@ -159,5 +159,9 @@ footer {
 		background-color:$background-rearyellow;
 		height: 30px;
 		line-height:30px;
+		overflow: hidden;
+		@media screen and (max-width: 1170px) {
+			font-size: percentage(10/13);
+		}
 	}
 }
