@@ -86,9 +86,17 @@ footer {
 			}
 		}
 		.container{
-			width:850px;
 			letter-spacing: 35px;
-			white-space: nowrap;
+			text-align:center;
+			position:relative;
+			margin-top:180px;
+			@media screen and (min-width: 1170px) {
+				width:850px;
+				white-space: nowrap;
+				letter-spacing: 15px;
+				text-align:left;
+				margin-top:0;
+			}
 			nav{
 				letter-spacing: -1em;
 				display: inline-block;
@@ -96,16 +104,42 @@ footer {
 					letter-spacing: 0;
 				}
 			}
-			.social ul{
-				letter-spacing: -1em;
-				a{
-					&:hover{
-						img{
-							transition-duration: 0.2s;
-							transform:scale(1.253846);
-						}
+			.social{
+				@media screen and (max-width: 1170px) {
+					position: absolute;
+					top:-140px;
+					width: 100%;
+					left:0;
+				}
+				h3{
+					font-weight: bold;
+					text-transform: uppercase;
+					display: inline-block;
+					position:relative;
+					z-index: 1;
+					letter-spacing: 1px;
+					&:before{
+						position:absolute;
+						bottom:0;
+						height:15px;
+						width: 100%;
+						background-color:$main-yellow;
+						opacity:0.8;
+						content:' ';
+						z-index: -1;
 					}
 				}
+				ul{
+					letter-spacing: -1em;
+					a{
+						&:hover{
+							img{
+								transition-duration: 0.2s;
+								transform:scale(1.253846);
+							}
+						}
+					}
+				} 
 			}
 			.main ul{
 				letter-spacing: 30px;

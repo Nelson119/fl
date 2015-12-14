@@ -4,11 +4,15 @@
   }
   position: fixed !important;
   top:390px!important;
-  right: 0px!important;
+  right: -30px!important;
   left: auto!important;
   width:40px!important;
   height:40px!important;
   z-index: 10;
+  transition:all 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s!important;
+  &:hover{
+    right:0!important;
+  }
   button.locale-main{
     font-size: 0;
     color:rgba(0,0,0,0);
@@ -17,7 +21,7 @@
     width:46px;
     height:41px;
     &.is-active {
-      transform: rotate(10deg) translateY(2px);
+      transform: rotate(10deg);
     }
     &:hover{
       box-shadow:none;
@@ -84,11 +88,15 @@
   }
   position: fixed !important;
   top:250px!important;
-  right: 0px!important;
+  right: -30px!important;
   left: auto!important;
   width:40px!important;
   height:40px!important;
   z-index: 10;
+  transition:all 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s!important;
+  &:hover{
+    right:0!important;
+  }
   button.social-main{
     font-size: 0;
     color:rgba(0,0,0,0);
@@ -97,7 +105,7 @@
     width:46px;
     height:41px;
     &.is-active {
-      transform: rotate(10deg) translateY(2px);
+      transform: rotate(10deg);
     }
     &:hover{
       box-shadow:none;

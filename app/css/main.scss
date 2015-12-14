@@ -75,6 +75,14 @@ body {
 	}
 }
 
+html{
+	&.ie,&.firefox.windows{
+		body{
+			font-family: $main-font-fallback;
+		}
+	}
+}
+
 @import "page/common";
 
 @import "section/header";
