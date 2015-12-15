@@ -299,7 +299,10 @@
 
     a{
       &:after{
-        border-color: transparent transparent transparent $main-blue;
+        border-color: transparent transparent transparent $main-red;
+      }
+      &:before{
+        background: $main-red;
       }
     }
   }
@@ -314,6 +317,18 @@
     border-bottom:3px solid $news-greeen;
     &:after{
       background-color:$news-greeen;
+    }
+  }
+  h6{
+    background:$news-greeen;
+
+    a{
+      &:after{
+        border-color: transparent transparent transparent $news-greeen;
+      }
+      &:before{
+        background: $news-greeen;
+      }
     }
   }
   ul{
@@ -365,46 +380,6 @@
       @media screen and (max-width: 1170px) {
         &:nth-child(4) ~li{
           display: none;
-        }
-      }
-    }
-  }
-  h6{
-    position:absolute;
-    top:0;
-    right:0;
-    background:$news-greeen;
-    padding-right:15px;
-    margin:0;
-
-    a{
-      background:transparent url(../img/home/view-more.png) right center no-repeat;
-      color:$main-white; 
-      padding:7px 12px;
-      display: inline-block;
-      &:after{
-        border-color: transparent transparent transparent $news-greeen;
-        border-style: solid;
-        border-top-width: 14px;
-        border-right-width: 14px;
-        border-bottom-width: 14px;
-        border-left-width: 0;
-        content: " ";
-        display: block;
-        height: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 100%;
-        opacity: 0.5;
-        background:#fff;
-
-      }
-      &:hover{
-        &:after{
-          width:15px;
-          transition-duration: 0.5s;
-          border-left-width: 14px;
         }
       }
     }
@@ -500,6 +475,9 @@
       &:after{
         border-color: transparent transparent transparent $main-blue;
       }
+      &:before{
+        background: $main-blue;
+      }
     }
   }
 }
@@ -524,6 +502,9 @@
     a{
       &:after{
         border-color: transparent transparent transparent $main-orange;
+      }
+      &:before{
+        background: $main-orange;
       }
     }
   }

@@ -164,3 +164,9 @@ gulp.task('build', ['lint', 'html', 'img', 'fonts', 'extras'], () => {
 gulp.task('default', ['clean'], () => {
   gulp.start('build');
 });
+ 
+gulp.task('tinypng', ['clean'], () => {
+  gulp.src(['app/img/**/*.png','app/img/**/*.jpg'])
+    .pipe($.tinypng('RpQXcDk7_To0LtCie5S647UshZiHjFdF'))
+    .pipe(gulp.dest('dist'));
+});

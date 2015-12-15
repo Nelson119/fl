@@ -138,8 +138,9 @@ h6{
 	top:0;
 	right:0;
 	background:$news-greeen;
-	padding-right:15px;
+	padding-right:5px;
 	margin:0;
+	overflow: hidden;
 	@media screen and (max-width: 1170px) {
 		display: none;
 	}
@@ -147,10 +148,10 @@ h6{
 	a{
 		background:transparent url(../img/home/view-more.png) right center no-repeat;
 		color:$main-white; 
-		padding:7px 12px;
+		padding:7px 24px 7px 12px;
 		display: inline-block;
 		&:after{
-			border-color: transparent transparent transparent $news-greeen;
+			border-color: rgba(255,255,255,0.5) rgba(255,255,255,0.5) rgba(255,255,255,0.5) transparent;
 			border-style: solid;
 			border-top-width: 14px;
 			border-right-width: 14px;
@@ -160,19 +161,38 @@ h6{
 			display: block;
 			height: 0;
 			position: absolute;
-			right: 0;
+			right: -14px;
 			top: 0;
-			width: 100%;
-			opacity: 0.5;
-			background:#fff;
-
+			width: 0;
+			opacity: 0;
+			// background:#fff;
+			transition-duration: 0.35s;
+		}
+		&:before{
+			right:-100%;
+			width:100%;
+			height:100%;
+			top:0;
+			position:absolute;
+			display: block;
+			content:' ';
+			background:$main-green;
+			opacity: 0;
+			transition-duration: 0.35s;
 		}
 		&:hover,&:active,&:focus{
 			color:$main-white; 
 			&:after{
-				width:15px;
+				width:20px;
 				transition-duration: 0.5s;
 				border-left-width: 14px;
+				border-color: rgba(255,255,255,0.5) rgba(255,255,255,0.5) rgba(255,255,255,0.5) transparent!important;
+				right:0;
+				opacity: 1;
+			}
+			&:before{
+				right: 0;
+				opacity: 0;
 			}
 		}
 	}
