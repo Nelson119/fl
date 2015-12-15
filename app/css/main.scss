@@ -25,6 +25,7 @@ body {
 	letter-spacing:1px;
 	word-spacing:1px;
 	min-width:320px;
+	overflow-x:hidden;
 	a{
 		color:$main-text-color;
 		transition-duration: 0.15s;

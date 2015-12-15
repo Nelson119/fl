@@ -2,14 +2,18 @@
   @media screen and (max-width: 1170px) {
     display: none;
   }
-  position: fixed !important;
-  top:390px!important;
+  top:890px!important;
   right: -19px !important;
   left: auto!important;
   width:40px!important;
   height:40px!important;
   z-index: 10;
-  transition:all 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s!important;
+  transition:transform,opacity,right 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s!important;
+  &.fixed{
+    position: fixed !important;
+    top:390px!important;
+  }
+
   &:hover{
     right:0!important;
   }
@@ -86,14 +90,18 @@
   @media screen and (max-width: 1170px) {
     display: none;
   }
-  position: fixed !important;
-  top:250px!important;
+  top:750px!important;
   right: -19px!important;
   left: auto!important;
   width:40px!important;
   height:40px!important;
   z-index: 10;
-  transition:all 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s!important;
+  transition:transform,opacity,right 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s!important;
+  &.fixed{
+    position: fixed !important;
+    top:250px!important;
+  }
+
   &:hover{
     right:0!important;
   }

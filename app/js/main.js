@@ -5,6 +5,7 @@
 	key-spacing */
 /*global  $, BloomingMenu, TweenMax */
 
+
 $(function(){
 	if($('#menu >ul').length){
 		var left = document.createElement('div');
@@ -110,7 +111,8 @@ $(function(){
 			// dots: true,
 			infinite: true,
 			slidesToShow: 1,
-			variableWidth: false,
+			variableWidth: true,
+			centerMode: true,
 			// autoplay: true,
 			autoplaySpeed: 3000,
 			pauseOnHover: true,
@@ -153,7 +155,20 @@ $(function(){
 
 			$('button', o).css('background-image', 'url()');
 
+			$('button', o).eq(0).on('click', function(){
+
+			});
+
 		}, 'xml');
+    });
+
+    $(window).on('scroll', function(){
+    	var st = $(window).scrollTop();
+    	if(st > 500){
+    		$('.social-container, .locale-container').addClass('fixed');
+    	}else{
+    		$('.social-container, .locale-container').removeClass('fixed');
+    	}
     });
 
     if($('.page.home .life .slide-container')){
@@ -188,6 +203,7 @@ $(function(){
 				pauseOnHover: true,
 				speed: 250
     		});
+
     	}($('.page.home .life .slide-container')));
     }
 

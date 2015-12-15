@@ -377,6 +377,14 @@ header{
               vertical-align: middle;
               height:37px;
             }
+            &:hover{
+              a{
+                &:after{
+                  transform:none;
+                  transition-duration:.5s;
+                }
+              }
+            }
             a{
               &:before{
                 content:' ';
@@ -384,9 +392,23 @@ header{
                 vertical-align: middle;
                 height:37px;
               }
+              &:after{
+                width:24px;
+                height:100%;
+                position:absolute;
+                top:0;
+                background:transparent url(../img/nav/arrow.png) 17px center no-repeat;
+                content:' ';
+                left:0;
+                transform: translateX(-7px);
+                transition-duration:.25s;
+              }
+              position:relative;
               height:100%;
               width:100%;
               vertical-align: middle;
+              text-align:left;
+              padding-left:30px;
             }
             &+li{
               a{
@@ -415,7 +437,7 @@ header{
   }
   .mobile-menu{
     padding:0 15px 3px;
-    height: 40px;
+    height: 50px;
     display: none;
     @media  (min-width: 768px) and (max-width: 1170px) {
       height: 96px;
@@ -430,32 +452,15 @@ header{
       top:0;
       margin-top:0;
     }
-    button{
+    a#slidedown-menu{
       width:30px;
       height:30px;
       margin-top:percentage(10/738);
-      background:$main-yellow;
-      border:1px solid rgba(0,0,0,0);
       position:absolute;
       right:15px;
       z-index: 2;
-      hr{
-        position:absolute;
-        top:0;
-        margin-top:percentage(25/50);
-        margin-left:percentage(-1/50);
-        padding-top:percentage(9/50);
-        width:percentage(34/50);
-        border: solid $main-white;
-        border-width:2px 0 2px;
-        height: 0;
-        &:before{
-          border-top:2px solid $main-white;
-          height:0;
-          content:' ';
-          display: block;
-          margin-top:percentage(-26/34);
-        }
+      img{
+        width:100%;
       }
       @media screen and (min-width: 768px) {
         width:50px;
@@ -465,16 +470,6 @@ header{
           margin-left:percentage(2/50);
           &:before{
             margin-top:percentage(-22/34);
-          }
-        }
-      }
-      &:hover{
-        border:1px solid $main-yellow;
-        background:$main-white;
-        hr{
-          border-color:$main-yellow;
-          &:before{
-            border-color:$main-yellow;
           }
         }
       }

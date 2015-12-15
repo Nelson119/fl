@@ -133,9 +133,12 @@ footer {
 				ul{
 					letter-spacing: -1em;
 					a{
+						img{
+							transition-duration: 0.2s;
+						}
 						&:hover{
 							img{
-								transition-duration: 0.2s;
+								transition-duration: 0.35s;
 								transform:scale(1.253846);
 							}
 						}
@@ -144,14 +147,37 @@ footer {
 			}
 			.main ul{
 				letter-spacing: 30px;
+				padding: 0 35px;
+				a{
+					overflow: hidden;
+				}
 			}
 		}
 	}
 	a{
 		color:$main-white;
+		position:relative;
+		&:after{
+			position:absolute;
+			border-bottom:1px solid $main-white;
+			width:100%;
+			height: 0;
+			content:' ';
+			bottom:1.7em;
+			left:0;
+			margin-left:36px;
+			transform: translateY(2px);
+			transform-origin:top center 0;
+			transition-duration: 0.2s;
+			opacity: 0;
+		}
 		&:hover{
 			color:$main-white;
-			text-decoration:underline;
+			// text-decoration:underline;
+			&:after{
+				transform: none;
+				opacity: 1;
+			}
 		}
 	}
 	.copy{
