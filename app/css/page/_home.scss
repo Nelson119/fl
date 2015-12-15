@@ -472,6 +472,9 @@
   background-color:$background-white;
   .title{
     margin:60px 0 27px;
+    @media screen and (max-width: 1170px) {
+      margin-top:0px;
+    }
   }
   h3{
     border-bottom:3px solid $main-orange;
@@ -554,10 +557,6 @@
         vertical-align: bottom;
         top:0;
         margin-left:20px;
-        &:before{
-          right:-22px;
-          border-width:12px;
-        }
       }
     }
     h4{

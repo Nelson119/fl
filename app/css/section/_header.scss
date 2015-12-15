@@ -532,7 +532,7 @@ header{
         display: block;
         height:auto;
         transition: color,opacity 0.75s ease-out 0s;
-        line-height: 3em;
+        line-height: 4em;
         svg{
           vertical-align: middle;
           position:absolute;
@@ -546,7 +546,7 @@ header{
             fill:$main-headline-color;
           }
           width: 30px;
-          @media screen and (min-width: 321px) {
+          @media screen and (min-width: 769px) {
             width:50px;
           }
         }
@@ -564,6 +564,14 @@ header{
           margin-top:-15px;
           top:1.75em;
           content:' ';
+        }
+        @media screen and (min-width: 769px) {
+          line-height: 3em;
+          padding-left:4em;
+          svg{
+            top:2em;
+            margin-top:-30px;
+          }
         }
       }
       hr{
@@ -612,13 +620,13 @@ header{
     position:absolute;
     right:15px;
     top:7px;
-    @media screen and (min-width: 321px) {
+    @media screen and (min-width: 767px) {
       top:15px;
     }
     cursor: pointer;
     img{
       width: 30px;
-      @media screen and (min-width: 321px) {
+      @media screen and (min-width: 767px) {
         width:50px;
       }
     }

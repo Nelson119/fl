@@ -44,28 +44,21 @@ h3.brush{
     color:$main-white;
     z-index: 1;
     display: inline-block;
-    background-color:$main-yellow;
     position:relative;
-	&:after{
-	    content: "";
-	    font-family: fontawesome;
-	    font-size: 40%;
-	    position: absolute;
-	    right: 0;
-	    top: 1.135em;
-	}
-	&:before{
-		border-color:transparent transparent transparent transparent;
-		border-width:9px;
-		border-style:solid;
-		position:absolute;
-		content:' ';
-		right:-18px;
-		top:0;
-		display: block;
-		height: 0;
-		width: 0;
-	}
+    img,svg{
+    	position:absolute;
+    	z-index: -1;
+    	right:-15%;
+    	top:0;
+    	height:100%;
+    	width:120%;
+    	polygon{
+    		fill:$main-yellow;
+    	}
+    	circle{
+    		fill:$main-white;
+    	}
+    }
 }
 ul.box-list{
     margin:45px -19px 0;
@@ -80,6 +73,9 @@ ul.box-list,ul.list{
 			padding-bottom:30px;
 			position:relative;
 			display: block;
+			@media screen and (max-width: 1170px) {
+				padding-bottom:10px;
+			}
 			&:after{
 				content: ' ';
 				border-width:7px;
@@ -135,10 +131,9 @@ ul.box-list,ul.list{
 	}
 	.green{
 		.category{
-			background-color:$main-green;
-			&:before{
-				border-color:transparent transparent transparent $main-green;
-			}
+	    	polygon{
+	    		fill:$main-green;
+	    	}
 		}
 		.box:after{
 			border-color:transparent $main-green $main-green transparent;
@@ -146,10 +141,9 @@ ul.box-list,ul.list{
 	}
 	.blue{
 		.category{
-			background-color:$main-blue;
-			&:before{
-				border-color:transparent transparent transparent $main-blue;
-			}
+	    	polygon{
+	    		fill:$main-blue;
+	    	}
 		}
 		.box:after{
 			border-color:transparent $main-blue $main-blue transparent;
@@ -158,10 +152,9 @@ ul.box-list,ul.list{
 
 	.yellow{
 		.category{
-			background-color:$main-yellow;
-			&:before{
-				border-color:transparent transparent transparent $main-yellow;
-			}
+	    	polygon{
+	    		fill:$main-yellow;
+	    	}
 		}
 		.box:after{
 			border-color:transparent $main-yellow $main-yellow transparent;

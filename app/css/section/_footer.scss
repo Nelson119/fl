@@ -19,13 +19,6 @@ footer {
 				width:26px;
 			}
 		}
-		.social{
-			li{
-				&+li{
-					margin-left: 10px;
-				}
-			}
-		}
 		.main{
 			text-align: left;
 			circle{
@@ -106,6 +99,7 @@ footer {
 				}
 			}
 			.social{
+				font-size:0;
 				@media screen and (max-width: 1170px) {
 					position: absolute;
 					top:-140px;
@@ -131,7 +125,7 @@ footer {
 					}
 				}
 				ul{
-					letter-spacing: -1em;
+					letter-spacing: 10px;
 					a{
 						img{
 							transition-duration: 0.2s;
