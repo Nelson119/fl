@@ -337,11 +337,11 @@
   ul{
     >li{
       .category{
-        position:absolute;
-        color:$main-white;
-        z-index: 1;
-        padding:3px 7px 0 10px;
-        top:0;
+        // position:absolute;
+        // color:$main-white;
+        // z-index: 1;
+        // padding:3px 7px 0 10px;
+        // top:0;
       }
       figure{
 
@@ -387,7 +387,6 @@
     }
   }
   .slide-container{
-    overflow:hidden;
     display: none;
     @media screen and (min-width: 1170px) {
       display: block;
@@ -462,6 +461,37 @@
       &:before{
         background: $main-blue;
       }
+    }
+  }
+
+  .slick-arrow{
+    @media screen and (max-width: 1170px) {
+      display: none;
+    }
+    position: absolute;
+    z-index: 1;
+    opacity:0.5;
+    transition-duration: 0.2s;
+    display: block;
+    width:23px;
+    height:42px;
+    background-image:url(../img/home/life-prev.png);
+    &:hover{
+      background-image:url(../img/home/life-prev.png);
+      opacity: inherit;
+    }
+    &:before{
+      font-size: 0;
+    }
+  }
+  .slick-prev {
+    left: -20px;
+  }
+  .slick-next {
+    right: -20px;
+    background-image:url(../img/home/life-next.png);
+    &:hover{
+      background-image:url(../img/home/life-next.png);
     }
   }
 }
@@ -549,13 +579,8 @@
     .date{
       white-space:nowrap;
       color:$main-orange;
-      vertical-align: bottom;
-      .category{
-        z-index: 1;
-        padding:2px 7px 2px 10px;
-        line-height: 1.5em;
-        vertical-align: bottom;
-        top:0;
+      vertical-align: middle;
+      sub{
         margin-left:20px;
       }
     }

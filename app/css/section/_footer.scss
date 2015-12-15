@@ -158,7 +158,7 @@ footer {
 						transition-duration: 0.2s;
 						opacity: 0;
 					}
-					&:hover{
+					&:hover,&:active,&:focus{
 						color:$main-white;
 						// text-decoration:underline;
 						&:after{
