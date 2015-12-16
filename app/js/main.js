@@ -211,7 +211,7 @@ $(function(){
     }
 
 
-	$(function(){
+	(function(){
 		var arr = [];
 		if($('.page.home .concept li a').length){
 			$('.page.home .concept li a').each(function(){
@@ -268,22 +268,6 @@ $(function(){
 		}, 'xml');
 
 	});
-
-    function initMap() {
-
-       var minZoomLevel = 10;
-
-        map = new google.maps.Map(m[0], {
-            zoom: minZoomLevel,
-            center: {lat: 23.46848199211126, lng: 121.23255939062507},
-            // styles: mapStyle
-
-        });
-        var geocoder = new google.maps.Geocoder();
-
-    }
-    if($('.map').length){
-
-    }
+	
 });
 
