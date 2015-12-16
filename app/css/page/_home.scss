@@ -413,6 +413,24 @@
 
     }
   }
+  h6{
+    bottom:25px;
+    left:50%;
+    margin-left:-60px;
+    right:auto;
+    top:auto;
+    background:$main-blue;
+
+    a{
+      &:after{
+        border-color: transparent transparent transparent $main-blue;
+      }
+      &:before{
+        background: $main-blue;
+      }
+    }
+  }
+
   .slick-dots{
     margin:0;
     bottom:30px;
@@ -446,24 +464,6 @@
       }
     }
   }
-  h6{
-    bottom:25px;
-    left:50%;
-    margin-left:-60px;
-    right:auto;
-    top:auto;
-    background:$main-blue;
-
-    a{
-      &:after{
-        border-color: transparent transparent transparent $main-blue;
-      }
-      &:before{
-        background: $main-blue;
-      }
-    }
-  }
-
   .slick-arrow{
     @media screen and (max-width: 1170px) {
       display: none;

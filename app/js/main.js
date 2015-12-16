@@ -354,5 +354,19 @@ $(function(){
 	if($('#map-canvas').length){
 		google.maps.event.addDomListener(window, 'load', initialize);
 	}
+
+	if($('.contact-list').length){
+		$('.contact-list').slick({
+			dots: true,
+			infinite: true,
+			slidesToShow: 4,
+			slidesToScroll: 4,
+			variableWidth: false,
+			// autoplay: true,
+			autoplaySpeed: 3000,
+			pauseOnHover: true,
+			speed: 750
+		});
+	}
 });
 
