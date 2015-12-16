@@ -1,9 +1,9 @@
 'use strict';
 /*eslint-disable new-cap, no-unused-vars, 
 	no-use-before-define, no-trailing-spaces, 
-	no-mixed-spaces-and-tabs, no-multi-spaces,
+	no-mixed-spaces-and-tabs, no-multi-spaces, camelcase, no-loop-func,
 	key-spacing */
-/*global  $, BloomingMenu, TweenMax */
+/*global  $, BloomingMenu, TweenMax, google, Marker */
 
 
 $(function(){
@@ -307,7 +307,7 @@ $(function(){
 				    map: map,
 				    position: pos,
 				    icon: {
-				        path: '',
+				        path: ''
 				    },
 				    map_icon_label: '<span class="map-icon"><img src=\'' + rows[i][3] + '\'></span>'
 				});
