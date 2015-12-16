@@ -268,6 +268,91 @@ $(function(){
 		}, 'xml');
 
 	});
-	
+
+
+
+    var markerInfoWindow = new google.maps.InfoWindow();
+
+	function initialize() {
+
+		var map = new google.maps.Map(document.getElementById('map-canvas'), {
+			zoom: 14,
+			scrollwheel: false,
+		//  (24.974891028984523, 121.52769804000853) 
+			center: new google.maps.LatLng(24.974891028984523, 121.52769804000853)
+		});
+
+
+
+        // Initialize JSONP request
+        var script = document.createElement('script');
+        var url = ['https://www.googleapis.com/fusiontables/v1/query?'];
+        url.push('sql=');
+        var query = 'SELECT * FROM ' +
+        '15FsqLyGDUOflrGelPOyEoF3D5937VLar3QHj2hoF';
+        var encodedQuery = encodeURIComponent(query);
+        url.push(encodedQuery);
+        url.push('&callback=drawMap');
+        url.push('&key=AIzaSyBf_sGPZtgUPenHRRZ-8nBUp7rZYru0bBo');
+        script.src = url.join('');
+        var body = document.getElementsByTagName('body')[0];
+        body.appendChild(script);
+
+        function drawMap(data) {
+            var rows = data.rows;
+            for (var i in rows) {
+	            var pos =  {lat:rows[i][2].geometry.coordinates[1], lng:rows[i][2].geometry.coordinates[0]};
+	            console.log(rows[i]);
+	            var marker = new Marker({
+				    map: map,
+				    position: pos,
+				    icon: {
+				        path: '',
+				    },
+				    map_icon_label: '<span class="map-icon"><img src=\'' + rows[i][3] + '\'></span>'
+				});
+				marker.name = rows[i][1];
+				marker.description = rows[i][0];
+				marker.icon = rows[i][3];
+
+                google.maps.event.addListener(marker, 'click', function(event) {
+
+
+
+		            var container = $('<div></div>');
+
+		            var aside = $('<aside class=\'inmap\'></aside>');
+
+		            aside.append('<h3 class=\'fontsize-16 font-default\'>' + this.name + '</h3>');
+
+		            aside.append('<p class=\'fontsize-13 font-default\'>' + this.description + '</p>');
+
+		            container.append(aside);
+
+		            $('.inmap').remove();
+
+		            // goto(place.index);
+		            var latLng = {lat: this.getPosition().lat() + 0.0009, lng: this.getPosition().lng()};
+		            map.setCenter(this.getPosition());
+		            markerInfoWindow.setPosition(latLng);
+
+		            markerInfoWindow.setContent(container.html());
+		            markerInfoWindow.open(map);
+
+                });
+            }
+        }
+
+        window.drawMap = drawMap;
+
+		google.maps.event.addDomListener(map, 'dragend', function(){
+			console.log(map.getCenter());
+		});
+
+	}
+
+	if($('#map-canvas').length){
+		google.maps.event.addDomListener(window, 'load', initialize);
+	}
 });
 

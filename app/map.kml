@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://www.opengis.net/kml/2.2'>
+	<Document>
+		<name>菲力兒童文教機構 | FILEXKIDS EDUCATION INSTITUTE</name>
+		<description><![CDATA[菲力兒童文教 兒童 幼兒 幼兒園 教育 安親 新店]]></description>
+		<Folder>
+			<name>安親校</name>
+			<Placemark>
+				<name>大豐安校 </name>
+				<description><![CDATA[TEL : (02)2918-5674<br>ADD: 新北市新店區建國路163-1號]]></description>
+				<styleUrl>#icon-green</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>121.53851350000004,24.9791209,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>中正安校</name>
+				<description><![CDATA[TEL : (02)2918-5674<br>ADD:新北市新店區三民路59號]]></description>
+				<styleUrl>#icon-green</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>121.53660660000003,24.9710309,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>北新安校 </name>
+				<description><![CDATA[TEL : (02)2918-8858<br>ADD: 新北市新店區永華街12號]]></description>
+				<styleUrl>#icon-green</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>121.543585,24.9762549,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>安康安校 </name>
+				<description><![CDATA[TEL : (02)2211-8922<br>ADD: 新北市新店區安康路二段341巷14號2樓]]></description>
+				<styleUrl>#icon-green</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>121.49644349999994,24.9547823,0.0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>幼兒園</name>
+			<Placemark>
+				<name>安華幼園 </name>
+				<description><![CDATA[TEL : (02)2910-3808<br>ADD : 新北市新店區平等街48巷19號]]></description>
+				<styleUrl>#icon-green</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>121.53523159999999,24.9732963,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>中興幼園</name>
+				<description><![CDATA[TEL : (02)2918-5674<br>ADD : 新北市新店區中興路一段266-1號]]></description>
+				<styleUrl>#icon-green</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>121.545022,24.9673069,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>復興幼園</name>
+				<description><![CDATA[TEL : (02)8911-3455<br>ADD : 新北市新店區寶元路一段15巷9號]]></description>
+				<styleUrl>#icon-green</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>121.54175469999994,24.987102,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>安康幼園</name>
+				<description><![CDATA[TEL : (02)2211-0599<br>ADD : 新北市新店區安康路二段341巷14號]]></description>
+				<styleUrl>#icon-green</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>121.49644349999994,24.9547823,0.0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>校務中心</name>
+			<Placemark>
+				<name>菲力校務中心│管理處 </name>
+				<description><![CDATA[TEL : (02)2939-6258<br>ADD : 台北市文山區樟新街70號]]></description>
+				<styleUrl>#icon-green</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>121.55550199999995,24.9771819,0.0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>愛兒館</name>
+			<Placemark>
+				<name>中興愛兒</name>
+				<description><![CDATA[TEL : (02)2219-6888<br>ADD : 新店市建國路163-1號]]></description>
+				<styleUrl>#icon-green</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>121.53851350000004,24.9791209,0.0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Style id='icon-green-normal'>
+			<IconStyle>
+				<scale>2</scale>
+				<Icon>
+					<href>img/contact/mappin-blue-24x32.png</href>
+					<hotSpot x='20' y='16' xunits='pixels' yunits='insetPixels'>
+					</hotSpot>
+				</Icon>
+			</IconStyle>
+			<LabelStyle>
+				<scale>0.0</scale>
+			</LabelStyle>
+		</Style>
+		<Style id='icon-green-highlight'>
+			<IconStyle>
+				<scale>1.1</scale>
+				<Icon>
+					<href>img/contact/mappin-blue-24x32.png</href>
+					<hotSpot x='0' y='16' xunits='pixels' yunits='insetPixels'>
+					</hotSpot>
+				</Icon>
+			</IconStyle>
+			<LabelStyle>
+				<scale>1.1</scale>
+			</LabelStyle>
+		</Style>
+		<StyleMap id='icon-green'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#icon-green-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#icon-green-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+	</Document>
+</kml>

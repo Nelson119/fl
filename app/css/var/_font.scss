@@ -49,6 +49,10 @@ $main-font-fallback:'Lantinghei', 'microsoft jhenghei', '微軟正黑體', 'Aria
 $base-font-size: 13px;
 $base-font-size-sm: 10px;
 
+.font-default{
+	font-family: $main-font, $main-font-fallback, cursive;
+}
+
 .fontsize-30 {
 	font-size: percentage(30px/$base-font-size);
 }
