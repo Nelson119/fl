@@ -1,0 +1,24 @@
+.page.gallery{
+  .box-list{
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top:0;
+    li{
+      .category{
+        position:relative;
+      }
+      .date{
+        display: inline-block;
+        color:$main-text-lightgrey;
+        padding-top:15px;
+        padding-left:85px;
+      }
+      padding:0 15px 30px;
+    }
+  }
+  .sidebar{
+    .calendar{
+      margin-bottom:60px;
+    }
+  }
+}
