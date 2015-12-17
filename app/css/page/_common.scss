@@ -272,6 +272,11 @@ h6{
 		}
 	}
 }
+.slick-slide{
+	&:focus{
+		outline:none;
+	}
+}
 
 @import "home";
 
