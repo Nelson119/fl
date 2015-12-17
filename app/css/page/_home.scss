@@ -317,20 +317,20 @@
     margin:60px 0 27px;
   }
   h3{
-    border-bottom:3px solid $news-greeen;
+    border-bottom:3px solid $news-green;
     &:after{
-      background-color:$news-greeen;
+      background-color:$news-green;
     }
   }
   h6{
-    background:$news-greeen;
+    background:$news-green;
 
     a{
       &:after{
-        border-color: transparent transparent transparent $news-greeen;
+        border-color: transparent transparent transparent $news-green;
       }
       &:before{
-        background: $news-greeen;
+        background: $news-green;
       }
     }
   }

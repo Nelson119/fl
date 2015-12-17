@@ -240,9 +240,9 @@ $(function(){
 
 
 
-    var markerInfoWindow = new google.maps.InfoWindow();
 
 	function initialize() {
+    	var markerInfoWindow = new google.maps.InfoWindow();
 
 		var map = new google.maps.Map(document.getElementById('map-canvas'), {
 			zoom: 14,
@@ -349,6 +349,16 @@ $(function(){
     }
 
 	$('.checkradios').checkradios();
+
+	if($('.dropdown').length){
+
+	    $('.dropdown-menu li a').click(function(){
+	    	var container = $(this).parents('.dropdown');
+			$('.btn:first-child', container).text($(this).text());
+			$('.btn:first-child', container).val($(this).text());
+			$(this).parents('li').addClass('selected').siblings().removeClass('selected');
+	   });
+	}
 
 	/*
 	* Replace all SVG images with inline SVG
