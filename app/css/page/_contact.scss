@@ -1,9 +1,13 @@
 .page.contact{
   overflow: hidden;
+  @media screen and (max-width: 1170px) {
+    margin-top: 60px;
+  }
   #map-canvas{
      width:100%;
      height:600px;
      margin-bottom: 60px;
+     background:url(../img/contact/map-preview.png) 0 0 /100% 100% no-repeat;
   }
   .map-icon {
     img{
@@ -12,6 +16,20 @@
     }
   }
   .contact-list{
+    @media screen and (max-width: 1170px) {
+      margin-left:5px;
+      margin-right:5px;
+      margin-bottom: 40px;
+      li{
+        padding:20px;
+      }
+    }
+    @media screen and (max-width: 767px) {
+      li{
+        padding: 0 0 20px;
+      }
+    }
+
     .slick-dots{
       margin:0;
       bottom:30px;
@@ -82,6 +100,9 @@
     position:relative;
     height:230px;
     margin-bottom: 80px;
+    @media screen and (max-width: 1170px) {
+      margin-bottom: 0;
+    }
     &.green{
       h3{
         color:$main-green;
@@ -125,20 +146,24 @@
       margin:0 0 10px;
     }
     ol{
-      margin-left:-2px;
-      margin-right:-2px;
+      padding:0 40px 0 0;
+      margin:0;
       position:absolute;
       bottom:30px;
       white-space:nowrap;
+      width: 100%;
+      letter-spacing: 0px;
 
       li{
         position:relative;
-        padding-left:2px;
-        padding-right:2px;
+        padding:0;
+        display: inline;
         a{
-          padding:2px 2px 2px 16px;
+          letter-spacing: 1px;
+          padding-right:2px;
           color:$main-pink;
           border:1px solid $main-pink;
+          max-width: 100%;
           &:hover{
             // border:1px solid $main-white;
             background:$main-pink;
@@ -157,29 +182,23 @@
         }
         &:nth-child(1){
           svg{
-            left: 0px;
-            position: absolute;
-            top: -3px;
-            max-height: 23px;
+            transform: translateY(7px);
+            max-height: 22px;
+            max-width: 22px;
           }
         }
         &:nth-child(2){
           svg{
-            left: 2px;
-            position: absolute;
-            top: -1px;
+            transform: translateY(5px);
             max-height: 20px;
+            max-width: 20px;
           }
         }
         &:nth-child(3){
-          a{
-            padding-left:13px;
-          }
           svg{
-            left: 4px;
-            position: absolute;
-            top: 3px;
-            max-height: 12px; 
+            transform: translateY(2px);
+            max-height: 13px;
+            max-width: 13px;
           }
         }
       }
@@ -187,22 +206,26 @@
   }
   .form{
     margin-bottom:60px;
-    width:700px;
+    max-width:700px;
     h3{
-      &:before{
-        background-color:$main-blue;
-      }
+      margin:0 0 20px 0;
     }
     form{
       margin:0 -10px;
       .form-group{
         padding:0 10px 20px;
         margin:0;
+        background:20px 8px/ 20px auto no-repeat;
         input,textarea{
-          background: $main-blue-hover;
+          background: $main-blue-hover no-repeat  6.8em 10px;
+          background-color:$main-blue-opacity-hover;
+          padding-left:35px;
           border:1px solid $main-blue;
           box-shadow:none;
           border-radius:0;
+          &:focus{
+            background-color:rgba(0,0,0,0);
+          }
           &::-webkit-input-placeholder {
              color: $main-text-color;
           }
@@ -218,21 +241,131 @@
           &:-ms-input-placeholder {  
              color: $main-text-color;  
           }
-          &:focus{
-            background:$main-white;
+          &:focus::-webkit-input-placeholder{
+            color:rgba(0,0,0,0);
           }
+          &:focus:-moz-placeholder{
+            color:rgba(0,0,0,0);
+          }
+          &:focus::-moz-placeholder{
+            color:rgba(0,0,0,0);
+          }
+          &:focus:-ms-input-placeholder{
+            color:rgba(0,0,0,0);
+          }
+          &[required]{
+            background-image:url(../img/contact/required.png) ; 
+            &:focus{
+              background:rgba(0,0,0,0);
+            }
+          }
+        }
+        textarea[required]{
+          background-position:7.8em 10px ; 
+        }
+        &.parent{
+          background-image:url(../img/contact/parent.svg);
+        }
+        &.kid{
+          background-image:url(../img/contact/kid.svg);
+        }
+        &.phone{
+          background-image:url(../img/contact/phone.svg);
+        }
+        &.gender{
+          background-image:url(../img/contact/gender.svg);
+        }
+        &.mail{
+          background-image:url(../img/contact/mail.svg);
+        }
+        &.birth{
+          background-image:url(../img/contact/birth.svg);
+          background-position:20px 8px;
+        }
+        &.advise{
+          background-image:url(../img/contact/advise.svg);
+          background-position:20px 8px;
+        }
+        &:focus:after{
+          color:rgba(0,0,0,0);
+        }
+        &.col-lg-12{
+          padding-bottom:0;
         }
       }
       .btn-default{
         border-radius:0;
         box-shadow:none;
-        padding:12px 50px;
+        padding:10px 50px;
         color:$main-white;
         background: $main-blue;
+        margin-top:25px;
       }
       textarea{
         resize:none;
       }
+    }
+    .highlight{
+      padding-top:25px;
+      display: block;
+      clear: both;
+      color:$main-red;
+    }
+    p{
+      margin-bottom:0;
+    }
+    label{
+      cursor: pointer;
+    }
+    .options{
+      margin:20px auto;
+      color:$main-blue;
+      @media screen and (max-width: 1170px) {
+        max-width: 550px;
+      }
+      li{
+        margin-left:10px;
+      }
+      input[type="radio"], input[type="checkbox"]{
+        border-color:$main-blue;
+        color:$main-blue;
+      }
+      .checkradios-radio{
+        border-color:$main-blue;
+        border-width:1px;
+        font-size:percentage(10/16);
+        margin-top: 5px;
+        vertical-align: top;
+        margin-right: 5px;
+        &:before{
+          color:$main-blue;
+          display: block;
+          opacity: 0;
+          width:1em;
+          height:1em;
+          content:' ';
+          background-color:$main-blue;
+          border-radius:50%;
+          transition-duration: 0.2s;
+        }
+        &.checked{
+          &:before{
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  h3.brush{
+    @media screen and (min-width: 1170px) {
+      font-size: percentage(30/13);
+    }
+    @media screen and (max-width: 1170px) {
+      margin:0 0 25px;
+    }
+    &:before{
+      background-color:$main-blue;
+      opacity: 0.4;
     }
   }
 }

@@ -38,7 +38,7 @@ const testLintOptions = {
   }
 };
 
-gulp.task('lint', lint('app/js/**/*.js'));
+gulp.task('lint', lint('app/js/main.js'));
 gulp.task('lint:test', lint('test/spec/**/*.js', testLintOptions));
 
 gulp.task('html', ['css'], () => {
@@ -168,5 +168,5 @@ gulp.task('default', ['clean'], () => {
 gulp.task('tinypng', ['clean'], () => {
   gulp.src(['app/img/**/*.png','app/img/**/*.jpg'])
     .pipe($.tinypng('RpQXcDk7_To0LtCie5S647UshZiHjFdF'))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist/img'));
 });

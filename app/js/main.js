@@ -237,37 +237,6 @@ $(function(){
 			});
 		});
 	}());
-	/*
-	* Replace all SVG images with inline SVG
-	*/
-	$('img.svg').each(function(){
-		var $img = $(this);
-		var imgID = $img.attr('id');
-		var imgClass = $img.attr('class');
-		var imgURL = $img.attr('src');
-
-		$.get(imgURL, function(data) {
-			// Get the SVG tag, ignore the rest
-			var $svg = $(data).find('svg');
-
-			// Add replaced image's ID to the new SVG
-			if(typeof imgID !== 'undefined') {
-				$svg = $svg.attr('id', imgID);
-			}
-			// Add replaced image's classes to the new SVG
-			if(typeof imgClass !== 'undefined') {
-				$svg = $svg.attr('class', imgClass + ' replaced-svg');
-			}
-
-			// Remove any invalid XML tags as per http://validator.w3.org
-			$svg = $svg.removeAttr('xmlns:a');
-
-			// Replace image with new SVG
-			$img.replaceWith($svg);
-
-		}, 'xml');
-
-	});
 
 
 
@@ -302,7 +271,6 @@ $(function(){
             var rows = data.rows;
             for (var i in rows) {
 	            var pos =  {lat:rows[i][2].geometry.coordinates[1], lng:rows[i][2].geometry.coordinates[0]};
-	            console.log(rows[i]);
 	            var marker = new Marker({
 				    map: map,
 				    position: pos,
@@ -355,18 +323,63 @@ $(function(){
 		google.maps.event.addDomListener(window, 'load', initialize);
 	}
 
-	if($('.contact-list').length){
-		$('.contact-list').slick({
-			dots: true,
-			infinite: true,
-			slidesToShow: 4,
-			slidesToScroll: 4,
-			variableWidth: false,
-			// autoplay: true,
-			autoplaySpeed: 3000,
-			pauseOnHover: true,
-			speed: 750
-		});
-	}
+	if($('.page.contact .contact-list').length){
+    	(function(slide){
+
+    		var slideM = slide.clone()
+    			.addClass('hidden-lg')
+    			.removeClass('hidden-xs')
+    			.removeClass('hidden-md')
+    			.removeClass('hidden-sm')
+
+    			.insertAfter(slide);
+
+			slide.slick({
+				dots: true,
+				infinite: true,
+				slidesToShow: 4,
+				slidesToScroll: 4,
+				variableWidth: false,
+				// autoplay: true,
+				autoplaySpeed: 3000,
+				pauseOnHover: true,
+				speed: 750
+			});
+		}($('.page.contact .contact-list')));
+    }
+
+	$('.checkradios').checkradios();
+
+	/*
+	* Replace all SVG images with inline SVG
+	*/
+	$('img.svg').each(function(){
+		var $img = $(this);
+		var imgID = $img.attr('id');
+		var imgClass = $img.attr('class');
+		var imgURL = $img.attr('src');
+
+		$.get(imgURL, function(data) {
+			// Get the SVG tag, ignore the rest
+			var $svg = $(data).find('svg');
+
+			// Add replaced image's ID to the new SVG
+			if(typeof imgID !== 'undefined') {
+				$svg = $svg.attr('id', imgID);
+			}
+			// Add replaced image's classes to the new SVG
+			if(typeof imgClass !== 'undefined') {
+				$svg = $svg.attr('class', imgClass + ' replaced-svg');
+			}
+
+			// Remove any invalid XML tags as per http://validator.w3.org
+			$svg = $svg.removeAttr('xmlns:a');
+
+			// Replace image with new SVG
+			$img.replaceWith($svg);
+
+		}, 'xml');
+
+	});
 });
 

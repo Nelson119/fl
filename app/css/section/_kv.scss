@@ -115,4 +115,31 @@
   ul{
     margin:0;
   }
+  >figure{
+    figcaption{
+      position:absolute;
+      display: inline-block;
+    }
+    h2{
+      margin-top: 92px;
+      display: block;
+      text-transform: uppercase;
+      font-weight: 600;
+      @media screen and (max-width: 768px) {
+        display: inline-block;
+        margin-top: 30px;
+        max-width: 250px;
+      }
+
+    }
+    sub{
+      display: inline-block;
+    }
+    img{
+      box-shadow:-2px -2px 4px rgba(0,0,0,0.5) inset;
+      height: 200px;
+      width:auto;
+      max-width: none;
+    }
+  }
 }

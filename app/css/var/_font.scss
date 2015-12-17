@@ -53,6 +53,10 @@ $base-font-size-sm: 10px;
 	font-family: $main-font, $main-font-fallback, cursive;
 }
 
+.fontsize-32 {
+	font-size: percentage(32px/$base-font-size);
+}
+
 .fontsize-30 {
 	font-size: percentage(30px/$base-font-size);
 }
