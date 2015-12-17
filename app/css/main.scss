@@ -27,6 +27,18 @@ body {
 	word-spacing:1px;
 	min-width:320px;
 	overflow-x:hidden;
+	::selection,::-moz-selection {
+		background:rgba(0,0,0,0.05);
+		color:inherit;
+	}
+	img::selection{
+		background:rgba(0,0,0,0.05);
+		color:inherit;	
+	}
+	img::-moz-selection {
+		background:rgba(0,0,0,0.05);
+		color:inherit;	
+	}
 	a{
 		color:$main-text-color;
 		transition-duration: 0.15s;

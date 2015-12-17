@@ -278,6 +278,15 @@ h6{
 	}
 }
 
+.sidebar .title{
+	margin:0;
+	text-transform:uppercase;
+}
+
 @import "home";
 
 @import "contact";
+
+@import "comment";
+
+
