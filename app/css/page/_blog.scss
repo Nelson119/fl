@@ -61,4 +61,11 @@
       margin-bottom:60px;
     }
   }
+  &.article{
+    article{
+      .tagline .author{
+        right:100px;
+      }
+    }
+  }
 }

@@ -12,7 +12,7 @@ $(function(){
 		$(left).addClass('left-menu').append($('#menu ul:eq(0)').clone().addClass('menu'));
 		$(left).addClass('left-menu').append($('footer .social ul').clone().addClass('social'));
 		$(left).appendTo($('body'));
-		$('.left-menu').prepend($('.close-menu'));
+		$('.left-menu').prepend($('.close-menu').removeClass('hide'));
 		$('#menu >ul').superfish({
 			animation:   {opacity:'show', height:'show'}, 
 			animationOut:   {opacity:'hide', height:'hide'}
