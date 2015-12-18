@@ -1,5 +1,6 @@
 /* Custom page footer */
 footer {
+	position:relative;
 	.link{
 		background-color: $background-lightyellow;
 		ul{
@@ -184,6 +185,28 @@ footer {
 		overflow: hidden;
 		@media screen and (max-width: 1170px) {
 			font-size: percentage(10/13);
+		}
+	}
+	.gotop{
+		background:url(../img/gotop/top-2.png) no-repeat center bottom;
+		position:absolute;
+		right:0;
+		top:-200px;
+		width:72px;
+		height:123px;
+		z-index:20;
+		&:hover{
+			.fly{
+				// animation-name: slideOutUp;				
+			 //    animation-duration: 1.2s;
+			 //    animation-iteration-count: infinite;
+			 	transform:translateY(-10px);
+			}
+		}
+		figure{
+			width:72px;
+			height:123px;
+			position:absolute;
 		}
 	}
 }

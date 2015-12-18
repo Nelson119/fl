@@ -394,6 +394,23 @@ $(function(){
 		};
 	}
 
+	if($('.gotop').length){
+		$('.gotop').on('click', function(ev){
+			// $('.gotop .fly ').attr('style', 'animation-name:\'\'');
+			TweenMax.set('.gotop .fly', {
+				top: ev.clientY,
+				position: 'fixed'
+			});
+			$('.gotop .fly').fadeOut(1000, function(){
+				$('.gotop .fly').removeAttr('style');
+			});
+			TweenMax.to('html,body', 1, {
+				scrollTop: 0
+			});
+
+		});
+	}
+
 	/*
 	* Replace all SVG images with inline SVG
 	*/
