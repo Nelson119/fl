@@ -118,6 +118,9 @@ ul.box-list,ul.list{
 			h4,p{
 				padding: 0 15px;
 			}
+			h4 + p{
+				height:40px;
+			}
 			figure{
 				position:relative;
 				&:after{
@@ -786,5 +789,7 @@ h6{
 @import "albums";
 
 @import "blog";
+
+@import "about";
 
 

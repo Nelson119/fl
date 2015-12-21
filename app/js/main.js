@@ -122,7 +122,7 @@ $(function(){
 			speed: 750
 		});
 	}
-
+	var page = $('.page').attr('class').replace(/page/, '');
     var socialMenu = new BloomingMenu({
       startAngle: 90,
       endAngle: 270,
@@ -164,6 +164,8 @@ $(function(){
 
 		}, 'xml');
     });
+    $('.social-container').addClass(page);
+    $('.locale-container').addClass(page);
 
     $(window).on('scroll', function(){
     	var st = $(window).scrollTop();
@@ -416,12 +418,14 @@ $(function(){
 	*/
 	var count = $('img.svg').length;
 	var cursor = 0;
-	$('body').append('<style class=\'progress\'>html:after{line-height:' + ($(window).height() + 31) + 'px;content:\'' + 0 + '%\';}</style>');
+	var dot = '...';
+	// $('body').append('<style class=\'progress\'>html:after{height:' + $(window).height() + 'px;line-height:' + ($(window).height() + 62) + 'px;content:\'' + 0 + '%\';}</style>');
 	$('img.svg').each(function(){
 		var $img = $(this);
 		var imgID = $img.attr('id');
 		var imgClass = $img.attr('class');
 		var imgURL = $img.attr('src');
+
 
 		$.get(imgURL, function(data) {
 			// Get the SVG tag, ignore the rest
@@ -443,15 +447,11 @@ $(function(){
 			$img.replaceWith($svg);
 
 			cursor++;
-			setTimeout(function(){
-				$('.progress').remove();
-				$('body').append('<style class=\'progress\'>html:after{line-height:' + ($(window).height() + 31) + 'px;content:\'' + (cursor / count * 100) + '%\';}</style>');
-			}, cursor * 50);
-
 
 			if(cursor === count){
 				$('html').addClass('image-ready');
 				// $('#progress').remove();
+				// clearInterval(dotdotdot);
 			}
 
 		}, 'xml');

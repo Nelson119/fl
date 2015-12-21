@@ -47,44 +47,58 @@ $icon-font-path: '../fonts/';
 $main-font: 'msjh-arial';
 $main-font-fallback:'Lantinghei', 'microsoft jhenghei', '微軟正黑體', 'Arial', 'Verdana', 'Segoe UI';
 $base-font-size: 13px;
+$base-font-size-num: 13;
 $base-font-size-sm: 10px;
 
 .font-default{
 	font-family: $main-font, $main-font-fallback, cursive;
 }
 
-.fontsize-32 {
-	font-size: percentage(32px/$base-font-size);
+@for $i from 11 to 44 {
+	.fontsize-#{$i} {
+		font-size: percentage($i/$base-font-size-num);
+	}
 }
+// .fontsize-38 {
+// 	font-size: percentage(32px/$base-font-size);
+// }
 
-.fontsize-30 {
-	font-size: percentage(30px/$base-font-size);
-}
-.fontsize-28 {
-	font-size: percentage(28px/$base-font-size);
-}
-.fontsize-24 {
-	font-size: percentage(24px/$base-font-size);
-}
-.fontsize-22 {
-	font-size: percentage(22px/$base-font-size);
-}
-.fontsize-20 {
-	font-size: percentage(20px/$base-font-size);
-}
-.fontsize-18 {
-	font-size: percentage(18px/$base-font-size);
-}
-.fontsize-16 {
-	font-size: percentage(16px/$base-font-size);
-}
-.fontsize-14 {
-	font-size: percentage(14px/$base-font-size);
-}
-.fontsize-13 {
-	font-size: percentage(13px/$base-font-size);
-}
-.fontsize-11 {
-	font-size: percentage(11px/$base-font-size);
-}
+// .fontsize-36 {
+// 	font-size: percentage(32px/$base-font-size);
+// }
+
+// .fontsize-32 {
+// 	font-size: percentage(32px/$base-font-size);
+// }
+
+// .fontsize-30 {
+// 	font-size: percentage(30px/$base-font-size);
+// }
+// .fontsize-28 {
+// 	font-size: percentage(28px/$base-font-size);
+// }
+// .fontsize-24 {
+// 	font-size: percentage(24px/$base-font-size);
+// }
+// .fontsize-22 {
+// 	font-size: percentage(22px/$base-font-size);
+// }
+// .fontsize-20 {
+// 	font-size: percentage(20px/$base-font-size);
+// }
+// .fontsize-18 {
+// 	font-size: percentage(18px/$base-font-size);
+// }
+// .fontsize-16 {
+// 	font-size: percentage(16px/$base-font-size);
+// }
+// .fontsize-14 {
+// 	font-size: percentage(14px/$base-font-size);
+// }
+// .fontsize-13 {
+// 	font-size: percentage(13px/$base-font-size);
+// }
+// .fontsize-11 {
+// 	font-size: percentage(11px/$base-font-size);
+// }
 

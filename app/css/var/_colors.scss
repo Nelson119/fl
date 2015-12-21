@@ -27,6 +27,47 @@ $main-headline-color: #313131;
 
 $nav-dash-color: #afafaf;
 
+.text-yellow{
+	color:$main-yellow;
+}
+.text-red{
+	color:$main-red;
+}
+.text-green{
+	color:$main-green;
+}
+.text-news{
+	color:$news-green;
+}
+.text-orange{
+	color:$main-orange;
+}
+.text-blue{
+	color:$main-blue;
+}
+.text-pink{
+	color:$main-pink;
+}
+.text-white{
+	color:$main-white;
+}
+.text-grey{
+	color:$main-text-grey;
+}
+
+.text-lightgrey{
+	color:$main-text-lightgrey;
+}
+
+.text-default{
+	color:$main-text-color;
+}
+
+.text-headline{
+	color:$main-headline-color;
+}
+
+
 //background colors
 
 $background-f7: #f7f7f7;
@@ -38,3 +79,4 @@ $background-rearyellow: #ffa200;
 
 $locale-bg:#9DE1F0;
 $locale-blue:#367ECF;
+
