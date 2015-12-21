@@ -188,6 +188,9 @@ footer {
 		}
 	}
 	.gotop{
+		@media screen and (max-width: 1170px) {
+			display: none;
+		}
 		background:url(../img/gotop/top-2.png) no-repeat center bottom;
 		position:absolute;
 		right:0;

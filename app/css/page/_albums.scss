@@ -24,6 +24,9 @@
         padding-top:15px;
         position:absolute;
         right:0;
+        @media screen and (max-width: 767px) {
+          position:relative;
+        }
       }
       padding:0 15px 30px;
     }
