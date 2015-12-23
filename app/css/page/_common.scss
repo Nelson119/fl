@@ -855,6 +855,11 @@ h6{
 	}
 
 }
+.page{
+	@media screen and (max-width: 1170px) {
+		overflow:hidden;
+	}
+}
 
 @import "home";
 
