@@ -443,6 +443,8 @@ header{
       height: 96px;
     }
     >a{
+      display: inline-block;
+      height: 100%;
       &:before{
         content: " ";
         display: inline-block;
@@ -456,7 +458,7 @@ header{
       vertical-align: middle;
     }
     img.logo{
-      vertical-align: top;
+      vertical-align: middle;
       height:35px;
       @media screen and (min-width: 768px) {
         height:80px;
@@ -496,7 +498,7 @@ header{
       display: inline-block;
       font-family: 微軟正黑體, 'lantinhei tc';
       line-height: 40px;
-      vertical-align: top;
+      vertical-align: middle;
       @media screen and (min-width: 768px) {
         line-height:96px;
         text-align:right;
