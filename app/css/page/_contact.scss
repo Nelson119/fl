@@ -1,5 +1,6 @@
 .page.contact{
   overflow: hidden;
+  background-color:$background-lightblue;
   @media screen and (max-width: 1170px) {
     margin-top: 60px;
   }
@@ -98,8 +99,9 @@
     padding-bottom:30px;
     box-shadow:rgba(0,0,0,0.1) 1px 0px 3px;
     position:relative;
-    height:230px;
     margin-bottom: 80px;
+    height: 250px;
+    background:$main-white;
     @media screen and (max-width: 1170px) {
       margin-bottom: 0;
     }
@@ -144,6 +146,9 @@
     p{
       line-height: 1.2em;
       margin:0 0 10px;
+      &+p{
+        margin-bottom:40px;
+      }
     }
     ol{
       padding:0 40px 0 0;

@@ -400,22 +400,6 @@ $(function(){
 		};
 	}
 
-	if($('.gotop').length){
-		$('.gotop').on('click', function(ev){
-			// $('.gotop .fly ').attr('style', 'animation-name:\'\'');
-			TweenMax.set('.gotop .fly', {
-				top: ev.clientY,
-				position: 'fixed'
-			});
-			$('.gotop .fly').fadeOut(1000, function(){
-				$('.gotop .fly').removeAttr('style');
-			});
-			TweenMax.to('html,body', 1, {
-				scrollTop: 0
-			});
-
-		});
-	}
 
 	/*
 	* Replace all SVG images with inline SVG
@@ -517,9 +501,47 @@ $(function(){
 		$(window).on({
 			'resize': function(){slideupBnr(); },
 			'scroll': function(){slideupBnr(); }
-		}).trigger('resize');
+		});
 
 	}
+	if($('.gotop').length){
+		$('.gotop').on('click', function(ev){
+			// $('.gotop .fly ').attr('style', 'animation-name:\'\'');
+			TweenMax.set('.gotop .fly', {
+				top: ev.clientY,
+				position: 'fixed'
+			});
+			$('.gotop .fly').fadeOut(1000, function(){
+				$('.gotop .fly').removeAttr('style');
+			});
+			TweenMax.to('html,body', 1, {
+				scrollTop: 0
+			});
 
+		});
+		var scrollGotoTop = function(){
+			var winHeight = $(window).height();
+
+			var showupArr = [];
+			showupArr.push($('.gotop').addClass('showup delay-1'));
+
+			if($(window).width() >= 768){
+				$.each(showupArr, function(i, d){
+					if( $(window).scrollTop() + winHeight - 100 > d.offset().top){
+						d.addClass('on');
+					}else{
+						d.removeClass('on');
+					}
+				});
+			}
+
+		};
+		$(window).on({
+			'resize': function(){scrollGotoTop(); },
+			'scroll': function(){scrollGotoTop(); }
+		});
+	}
+
+	$(window).trigger('resize');
 });
 
