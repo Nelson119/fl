@@ -212,4 +212,27 @@ footer {
 			position:absolute;
 		}
 	}
+
+	&.lightgreen{
+		
+		@media screen and (max-width: 1170px) {
+		    background: $background-lightgreen none repeat scroll 0 0;
+	    	padding-top: 1px;
+		}
+	}
+	&.lightblue{
+		
+		@media screen and (max-width: 1170px) {
+		    background: $background-lightblue none repeat scroll 0 0;
+	    	padding-top: 1px;
+		}
+	}
+	&.life{
+		
+		@media screen and (max-width: 1170px) {
+		    background: $background-life none repeat scroll 0 0;
+	    	padding-top: 1px;
+		}
+	}
 }
+
