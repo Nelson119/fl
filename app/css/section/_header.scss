@@ -49,6 +49,7 @@ header{
   }
   #menu{
     text-align:right;
+    font-size: 15px;
     &:before{
       height:90px;
       display: inline-block;
@@ -436,14 +437,18 @@ header{
 
   }
   .mobile-menu{
-    padding:0 15px 3px;
+    padding:0 15px 0;
     height: 50px;
     display: none;
+    text-align: right;
+    min-width: 320px;
     @media  (min-width: 768px) and (max-width: 1170px) {
       height: 96px;
     }
     >a{
       display: inline-block;
+      position:absolute;
+      left:15px;
       height: 100%;
       &:before{
         content: " ";
@@ -470,6 +475,7 @@ header{
     a#slidedown-menu{
       width:30px;
       height:30px;
+      left:auto;
       position:relative;
       vertical-align: middle;
       display: inline-block;
@@ -497,7 +503,7 @@ header{
     .locale{
       display: inline-block;
       font-family: 微軟正黑體, 'lantinhei tc';
-      line-height: 40px;
+      line-height: 50px;
       vertical-align: middle;
       @media screen and (min-width: 768px) {
         line-height:96px;

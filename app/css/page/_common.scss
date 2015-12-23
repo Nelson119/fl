@@ -264,7 +264,7 @@ h6{
 }
 
 .breadcrumbs{
-	margin:15px 0 0;
+	padding:15px 0 0;
 	ul{
 		li{
 			a{
@@ -363,12 +363,15 @@ h6{
 				height: 100%;
 				padding-left:0;
 				padding-right:5px;
+				vertical-align: top;
+				margin-top:-2px;
 	        }
 	        a{
 				padding-right:0;
 				padding-left:5px;
 	          	height: 100%;
 	          	display: inline-block;
+				vertical-align: top;
 	          	&:hover,&:active,&:focus{
 	            	color:$main-headline-color;
 	          	}
@@ -684,10 +687,10 @@ h6{
 			line-height: 1.2em;
 			padding:0.3em 0.5em;
 			font-weight: 600;			
-			margin:0 50px 0 0;
+			margin:0;
 			position:relative;
 	        @media screen and (max-width: 1170px) {
-				margin:50px 0 0;
+				margin:0;
 	        }
 			.author{
 				position:absolute;

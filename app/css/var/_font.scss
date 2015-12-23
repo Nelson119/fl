@@ -53,6 +53,9 @@ $base-font-size-sm: 10px;
 .font-default{
 	font-family: $main-font, $main-font-fallback, cursive;
 }
+.fontsize-reset {
+	font-size: $base-font-size;
+}
 
 @for $i from 11 to 44 {
 	.fontsize-#{$i} {

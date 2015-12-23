@@ -97,7 +97,8 @@ gulp.task('serve', ['css', 'fonts'], () => {
       baseDir: ['.tmp', 'app'],
       routes: {
         '/bower_components': 'bower_components',
-        '/node_modules': 'node_modules'
+        '/node_modules': 'node_modules',
+        '/dist': 'dist'
       }
     }
   });

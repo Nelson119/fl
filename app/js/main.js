@@ -452,8 +452,10 @@ $(function(){
 
 			cursor++;
 
-			if(cursor === count && !($('#map-canvas').length && $(window).width() > 1170)) {
-				$('html').addClass('image-ready');
+			if(cursor === count) {
+				if(!$('#map-canvas').length || $(window).width() < 1170) {
+					$('html').addClass('image-ready');
+				}
 				// $('#progress').remove();
 				// clearInterval(dotdotdot);
 			}
