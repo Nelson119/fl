@@ -17,6 +17,9 @@
         margin-bottom: 0;
         margin-top: 15px;
         position: relative;
+        @media screen and (max-width: 767px) {
+          margin-bottom:10px;
+        }
       }
       .date{
         display: inline-block;
@@ -26,6 +29,8 @@
         right:0;
         @media screen and (max-width: 767px) {
           position:relative;
+          padding-top:0;
+          margin-bottom:0;
         }
       }
       padding:0 15px 30px;

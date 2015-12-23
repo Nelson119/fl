@@ -108,7 +108,8 @@ $(function(){
 			autoplay: true,
 			autoplaySpeed: 3000,
 			pauseOnHover: true,
-			speed: 750
+			speed: 2000,
+			cssEase: 'ease-out'
 		});
 		$('#kvm ul').slick({
 			// dots: true,
@@ -119,7 +120,8 @@ $(function(){
 			// autoplay: true,
 			autoplaySpeed: 3000,
 			pauseOnHover: true,
-			speed: 750
+			speed: 750,
+			cssEase: 'ease-in-out'
 		});
 	}
 	var page = $('.page').attr('class').replace(/page/, '');
@@ -310,7 +312,9 @@ $(function(){
 		            markerInfoWindow.open(map);
 
                 });
+
             }
+			$('html').addClass('image-ready');
         }
 
         window.drawMap = drawMap;
@@ -448,7 +452,7 @@ $(function(){
 
 			cursor++;
 
-			if(cursor === count){
+			if(cursor === count && !($('#map-canvas').length && $(window).width() > 1170)) {
 				$('html').addClass('image-ready');
 				// $('#progress').remove();
 				// clearInterval(dotdotdot);

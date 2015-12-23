@@ -130,6 +130,7 @@
                 animation-duration: 0.3s;
                 animation-fill-mode: both;
                 transform-origin:center left 0;
+                z-index: 1;
               }
               div{
                 animation-name: bounceIn;
@@ -182,6 +183,9 @@
             }
           }
         }
+        &:hover{
+          z-index: 1;
+        }
         @media screen and (max-width: 1170px) {
           &+li{
             margin-top:60px;
@@ -206,12 +210,18 @@
       width: 60px;
       height:60px;
       margin:0 auto;
-      img,svg{
-        width:100%;
-      }
-      svg{
-        path{
-          fill:$main-red;
+
+      background:url(../img/anouncement/Z01.svg) no-repeat 0 0/100% auto;
+
+      @for $i from 2 to 31 {
+        @if $i < 10 {
+          $s : '0' + $i
+        }
+        @else{
+          $s : $i
+        }
+        &.z#{$s}{
+          background-image:url(../img/anouncement/Z#{$s}.svg);
         }
       }
     }
@@ -267,9 +277,9 @@
         }
         a{
           &:hover,&:focus,&:active{
-            color:$main-red;
-            h5{
-              color:$main-text-color;
+            color:inherit;
+            h4{
+              color:$main-red;
             }
             .btn{
               background-color:$main-red;
@@ -508,6 +518,9 @@
   .blog{
     padding-top: 40px;
     padding-bottom: 60px;
+    @media screen and (max-width: 767px) {
+      padding-bottom:0;
+    }
     background-color:$background-white;
     .title{
       margin:60px 0 27px;
@@ -596,6 +609,12 @@
       h4{
         margin:0;
         text-indent:3px;
+        @media screen and (max-width: 1170px) {
+          text-indent:20px;
+        }
+        @media screen and (max-width: 767px) {
+          text-indent:0;
+        }
       }
     }
   }

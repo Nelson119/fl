@@ -47,7 +47,6 @@ h3.brush{
     color: #fff;
     display: inline-block;
     line-height: 1.8em;
-    margin-top: -0.1em;
     padding: 0 1.5em 0 1em !important;
     position: absolute;
     z-index: 1;
@@ -538,6 +537,27 @@ h6{
 	}
 	.prev{
 		display: inline-block;
+    	@media screen and (max-width: 1170px) {
+    		color:$transparent !important;
+			position:relative;
+			&:before{
+				padding:5px 10px;
+	    		position:absolute;
+	    		left:0;
+	    		top:0;
+				font-family: 'microsoft jhenghei', 'FontAwesome';
+				content:'上一頁';
+	    		color:$main-white;
+			}
+			&:after{
+				padding:5px 11px;
+	    		position:absolute;
+	    		left:0;
+	    		top:0;
+				font-family:'FontAwesome';
+				content:'';
+			}
+		}
 	}
 	a{
 		font-weight: bold;
@@ -549,11 +569,46 @@ h6{
 			width:20px;
 			height:20px;
 		}
+    	@media screen and (max-width: 1170px) {
+    		opacity: 0;
+			pointer-events: none;
+			cursor: default;
+		}
 	}
 	.next{
 		display: inline-block;
+    	@media screen and (max-width: 1170px) {
+    		color:$transparent !important;
+			position:relative;
+			&:before{
+				padding:5px 10px;
+	    		position:absolute;
+	    		right:0;
+	    		top:0;
+				font-family: 'microsoft jhenghei', 'FontAwesome';
+				content:'下一頁';
+	    		color:$main-white;
+			}
+			&:after{
+				padding:5px 11px;
+	    		position:absolute;
+	    		right:0;
+	    		top:0;
+				font-family: 'FontAwesome';
+				content:'';
+	    		color:$main-white;
+			}
+		}
 	}
 	&.red{
+    	@media screen and (max-width: 1170px) {
+			a:before{
+	    		background:$main-red;
+			}
+			a:after{
+	    		color:$main-red;
+			}
+		}
 	    a{
 	      color:$main-red;
 	      &:hover,&:active,&:focus{
@@ -571,6 +626,14 @@ h6{
 	    }
 	}
 	&.orange{
+    	@media screen and (max-width: 1170px) {
+			a:before{
+	    		background:$main-orange;
+			}
+			a:after{
+	    		color:$main-orange;
+			}
+		}
 	    a{
 	      color:$main-orange;
 	      &:hover,&:active,&:focus{
@@ -588,6 +651,14 @@ h6{
 	    }
 	}
 	&.newsgreen{
+    	@media screen and (max-width: 1170px) {
+			a:before{
+	    		background:$news-green;
+			}
+			a:after{
+	    		color:$news-green;
+			}
+		}
 	    a{
 	      color:$news-green;
 	      &:hover,&:active,&:focus{
@@ -615,6 +686,9 @@ h6{
 			font-weight: 600;			
 			margin:0 50px 0 0;
 			position:relative;
+	        @media screen and (max-width: 1170px) {
+				margin:50px 0 0;
+	        }
 			.author{
 				position:absolute;
 				right: -50px;
@@ -663,12 +737,20 @@ h6{
 			color:$main-text-grey;
 			padding-bottom:20px;
 			// border-bottom:1px solid;
+	        @media screen and (max-width: 767px) {
+				padding-bottom:40px;
+	        }
 			.author{
 				position:absolute;
 				right:0;
+				bottom:20px;
 			}
 			.date{
 				margin-left:110px;
+		        @media screen and (max-width: 767px) {
+				    display: block;
+				    text-align: right;
+		        }
 			}
 			.category{
 			    line-height: 1.7em;

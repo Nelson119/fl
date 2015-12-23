@@ -176,6 +176,7 @@
           }
         }
         .svg{
+          width: 100%;
           path{
             fill:$main-pink;
           }
@@ -259,6 +260,12 @@
               background:rgba(0,0,0,0);
             }
           }
+          &[required]:valid {
+            background-image:none ; 
+            &:focus{
+              background:rgba(0,0,0,0);
+            }
+          }
         }
         textarea[required]{
           background-position:7.8em 10px ; 
@@ -285,6 +292,10 @@
         &.advise{
           background-image:url(../img/contact/advise.svg);
           background-position:20px 8px;
+          textarea{
+            height:256px;
+            display: block;
+          }
         }
         &:focus:after{
           color:rgba(0,0,0,0);
@@ -316,6 +327,12 @@
     }
     label{
       cursor: pointer;
+      &:before{
+        content: " ";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+      }
     }
     .options{
       margin:20px auto;
@@ -334,9 +351,9 @@
         border-color:$main-blue;
         border-width:1px;
         font-size:percentage(10/16);
-        margin-top: 5px;
-        vertical-align: top;
-        margin-right: 5px;
+        display: inline-block;
+        margin: -5px 5px 0;
+        vertical-align: middle;
         &:before{
           color:$main-blue;
           display: block;

@@ -81,7 +81,6 @@
                 <ul>
                   <li><a href="anouncement.html">全校公告</a></li>
                   <li><a href="news.html">學校新聞</a></li>
-                  <li><a href="javascript:">線上電子報</a></li>
                   <li><a href="calendar.html">校務行事曆</a></li>
                 </ul>
               </li>
@@ -152,7 +151,7 @@
         <div class="col-lg-12">
             <section class="row">
               <!--left content-->
-              <div class="fb-comments col-lg-9" data-href="http://google.com/" data-width="100%" data-numposts="5"></div>
+              <div class="fb-comments col-lg-9" data-href="http://google.com/" data-width="100%" data-numposts="5" data-css="facebook.css"></div>
               <!-- end left content -->
               <!--sidebar-->
               <div class="col-lg-3 sidebar hidden-md hidden-sm hidden-xs">
@@ -269,7 +268,9 @@
       js = d.createElement(s); js.id = id;
       js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.5&appId=489266664463439";
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    }(document, 'script', 'facebook-jssdk'));
+      document.getElementById('fb-comments').innerHTML = '';
+    </script>
 
     <!-- build:js js/vendor.js -->
     <!-- bower:js -->

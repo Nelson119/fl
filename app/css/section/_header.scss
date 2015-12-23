@@ -442,6 +442,19 @@ header{
     @media  (min-width: 768px) and (max-width: 1170px) {
       height: 96px;
     }
+    >a{
+      &:before{
+        content: " ";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        width: 0;
+      }
+      vertical-align: middle;
+    }
+    >ul{
+      vertical-align: middle;
+    }
     img.logo{
       vertical-align: top;
       height:35px;
@@ -455,17 +468,22 @@ header{
     a#slidedown-menu{
       width:30px;
       height:30px;
-      margin-top:percentage(10/738);
-      position:absolute;
-      right:15px;
+      position:relative;
+      vertical-align: middle;
+      display: inline-block;
       z-index: 2;
       img{
+        position:absolute;
+        top:0;
+        left:0;
         width:100%;
       }
       @media screen and (min-width: 768px) {
         width:50px;
         height:50px;
-        margin-top:percentage(10/738);
+        position:absolute;
+        right:25px;
+        margin-top:percentage(20/738);
         hr{
           margin-left:percentage(2/50);
           &:before{
@@ -638,9 +656,10 @@ header{
     }
   }
   .close-menu{
-    position:absolute;
-    right:15px;
-    top:7px;
+    cursor: pointer;
+    position: absolute;
+    right: 25px;
+    top: 13px;
     @media screen and (min-width: 767px) {
       top:15px;
     }

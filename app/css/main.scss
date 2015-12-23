@@ -117,35 +117,38 @@ html{
 	}	
 }
 
-.showup{
-    opacity: 0;
-    transform: translateY(50px);
-    &.on{
-	    animation-delay: 0s;
-	    animation-direction: normal;
-	    animation-duration: 1.2s;
-	    animation-fill-mode: forwards;
-	    animation-iteration-count: 1;
-	    animation-name: showup;
-	    animation-timing-function: ease-in-out;
-	    transform: translateY(0px);
+@media screen and (min-width: 767px) {
+	.showup{
 
-	    &.delay-1{
-	    	animation-delay: 0s;
+	    opacity: 0;
+	    transform: translateY(50px);
+	    &.on{
+		    animation-delay: 0s;
+		    animation-direction: normal;
+		    animation-duration: 1.2s;
+		    animation-fill-mode: forwards;
+		    animation-iteration-count: 1;
+		    animation-name: showup;
+		    animation-timing-function: ease-in-out;
+		    transform: translateY(0px);
+
+		    &.delay-1{
+		    	animation-delay: 0s;
+		    }
+		    &.delay-2{
+		    	animation-delay: 0.25s;
+		    }
+		    &.delay-3{
+		    	animation-delay: 0.5s;	    	
+		    }
+		    &.delay-4{
+		    	animation-delay: 0.75s;
+		    }
+		    &.delay-5{
+		    	animation-delay: 1s;	    	
+		    }
 	    }
-	    &.delay-2{
-	    	animation-delay: 0.25s;
-	    }
-	    &.delay-3{
-	    	animation-delay: 0.5s;	    	
-	    }
-	    &.delay-4{
-	    	animation-delay: 0.75s;
-	    }
-	    &.delay-5{
-	    	animation-delay: 1s;	    	
-	    }
-    }
+	}
 }
 
 @keyframes showup {

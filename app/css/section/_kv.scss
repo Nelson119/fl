@@ -4,13 +4,17 @@
   margin-top:120px;
   overflow: hidden;
   >figure{
+    position:relative;
     figcaption{
       position:absolute;
       display: inline-block;
+      width: 100%;
+      top:50%;
+      margin-top:-82px;
     }
     h2{
-      margin-top: 92px;
-      display: block;
+      // margin-top: percentage(92/1920);
+      display: inline-block;
       text-transform: uppercase;
       font-weight: 600;
       span + span:before{
@@ -18,13 +22,12 @@
         margin-right:0.5em;
         width:0;
         height:0.9em;
-        display: inline-block;
         border-left:1px solid $main-headline-color;
         content:' ';
       }
     }
     sub{
-      display: inline-block;
+      display: block;
       line-height:1.4em;
     }
     img{
@@ -151,7 +154,7 @@
       }
     }
     sub{
-      display: inline-block;
+      display: block;
       line-height:1.4em;
     }
     img{
