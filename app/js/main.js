@@ -485,7 +485,7 @@ $(function(){
 			showupArr.push($('.home .blog li').eq(3).addClass('showup delay-4'));
 			showupArr.push($('.home .blog li').eq(4).addClass('showup delay-5'));
 
-			if($(window).width() >= 768){
+			if($(window).width() >= 1170){
 				$.each(showupArr, function(i, d){
 					if( $(window).scrollTop() + winHeight - 100 > d.offset().top){
 						d.addClass('on');
