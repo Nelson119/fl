@@ -395,7 +395,7 @@
   .life{
     position:relative;
     padding-bottom: 40px;
-    background:rgba(0,0,0,0) no-repeat center center url(../img/home/life-bg.png);
+    background:rgba(0,0,0,0) no-repeat center center/ auto 100% url(../img/home/life-bg.png);
     @media screen and (max-width: 1170px) {
       padding-bottom:10px;
     }

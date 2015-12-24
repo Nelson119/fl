@@ -3,9 +3,83 @@
 	no-use-before-define, no-trailing-spaces, 
 	no-mixed-spaces-and-tabs, no-multi-spaces, camelcase, no-loop-func,
 	key-spacing */
-/*global  $, BloomingMenu, TweenMax, google, Marker */
+/*global  $, BloomingMenu, TweenMax, TimelineMax, google, Marker */
 
 $(function(){
+
+	function imageReady(){
+
+
+		//blooms 
+		(function(window){
+			var page = $('.page').attr('class').replace(/page/, '');
+			$('body').append('<div id=\'bloom-container\'></div>');
+		    var socialMenu = new BloomingMenu({
+		      startAngle: 90,
+		      endAngle: 270,
+		      radius: 100,
+		      itemsNum: 5,
+		      itemAnimationDelay: 0.08,
+		      CSSClassPrefix: 'social-'
+		    });
+		    socialMenu.render();
+		    var localeMenu = new BloomingMenu({
+		      startAngle: 200,
+		      endAngle: 160,
+		      radius: 100,
+		      itemsNum: 2,
+		      itemAnimationDelay: 0.08,
+		      CSSClassPrefix: 'locale-'
+		    });
+		    localeMenu.render();
+		    $('.locale-item, .social-item').each(function(i, d){
+		    	var o = this;
+
+		    	var imgURL = $('button', o).css('background-image').replace(/url\(|\)|'|"/ig, '');
+
+		    	$.get(imgURL, function(data) {
+					// Get the SVG tag, ignore the rest
+					var $svg = $(data).find('svg');
+
+					// Remove any invalid XML tags as per http://validator.w3.org
+					$svg = $svg.removeAttr('xmlns:a');
+
+					// Replace image with new SVG
+					$('button', o).append($svg);
+
+					$('button', o).css('background-image', 'url()');
+
+					$('button', o).eq(0).on('click', function(){
+
+					});
+
+				}, 'xml');
+		    });
+		    $('#bloom-container').append($('.social-container, .locale-container'));
+		    $('#bloom-container').addClass(page);
+	    	var offset = $('#bloom-container').offset().top - 220;
+	    	var butt = $(document).height() - 710;
+	    	var offsetButt = butt - 220;
+	    	$('body').append('<style>#bloom-container.butt{top:' + butt + 'px!important}</style>');
+		    $(window).on('scroll resize', function(){
+		    	var st = $(window).scrollTop();
+		    	if(st > offset){
+		    		$('#bloom-container').addClass('fixed');
+		    	}else{
+		    		$('#bloom-container').removeClass('fixed');
+		    	}
+		    	if(st > offsetButt){
+		    		$('#bloom-container').addClass('butt');
+		    	}else{
+		    		$('#bloom-container').removeClass('butt');
+		    	}
+		    });
+
+
+		}(window));
+
+	}
+
 
 	if($('#menu >ul').length){
 		var left = document.createElement('div');
@@ -124,59 +198,6 @@ $(function(){
 			cssEase: 'ease-in-out'
 		});
 	}
-	var page = $('.page').attr('class').replace(/page/, '');
-    var socialMenu = new BloomingMenu({
-      startAngle: 90,
-      endAngle: 270,
-      radius: 100,
-      itemsNum: 5,
-      itemAnimationDelay: 0.08,
-      CSSClassPrefix: 'social-'
-    });
-    socialMenu.render();
-    var localeMenu = new BloomingMenu({
-      startAngle: 200,
-      endAngle: 160,
-      radius: 100,
-      itemsNum: 2,
-      itemAnimationDelay: 0.08,
-      CSSClassPrefix: 'locale-'
-    });
-    localeMenu.render();
-    $('.locale-item, .social-item').each(function(i, d){
-    	var o = this;
-
-    	var imgURL = $('button', o).css('background-image').replace(/url\(|\)|'|"/ig, '');
-
-    	$.get(imgURL, function(data) {
-			// Get the SVG tag, ignore the rest
-			var $svg = $(data).find('svg');
-
-			// Remove any invalid XML tags as per http://validator.w3.org
-			$svg = $svg.removeAttr('xmlns:a');
-
-			// Replace image with new SVG
-			$('button', o).append($svg);
-
-			$('button', o).css('background-image', 'url()');
-
-			$('button', o).eq(0).on('click', function(){
-
-			});
-
-		}, 'xml');
-    });
-    $('.social-container').addClass(page);
-    $('.locale-container').addClass(page);
-
-    $(window).on('scroll', function(){
-    	var st = $(window).scrollTop();
-    	if(st > 500){
-    		$('.social-container, .locale-container').addClass('fixed');
-    	}else{
-    		$('.social-container, .locale-container').removeClass('fixed');
-    	}
-    });
 
     if($('.page.home .life .slide-container')){
     	(function(slide){
@@ -242,9 +263,6 @@ $(function(){
 		});
 	}());
 
-
-
-
 	function initialize() {
     	var markerInfoWindow = new google.maps.InfoWindow();
 
@@ -287,10 +305,7 @@ $(function(){
 				marker.description = rows[i][0];
 				marker.icon = rows[i][3];
 
-                google.maps.event.addListener(marker, 'click', function(event) {
-
-
-
+				marker.addListener('click', function() {
 		            var container = $('<div></div>');
 
 		            var aside = $('<aside class=\'inmap\'></aside>');
@@ -302,17 +317,17 @@ $(function(){
 		            container.append(aside);
 
 		            $('.inmap').remove();
-
-		            // goto(place.index);
 		            var latLng = {lat: this.getPosition().lat() + 0.0009, lng: this.getPosition().lng()};
-		            map.setCenter(this.getPosition());
 		            markerInfoWindow.setPosition(latLng);
-
 		            markerInfoWindow.setContent(container.html());
 		            markerInfoWindow.open(map);
+					$('.gm-style-iw').parent().css('margin-top', '-55px');
+				});
 
-                });
-
+				// assuming you also want to hide the infowindow when user mouses-out
+				marker.addListener('mouseout', function() {
+				    markerInfoWindow.close();
+				});
             }
 			$('html').addClass('image-ready');
         }
@@ -440,6 +455,7 @@ $(function(){
 				if(!$('#map-canvas').length || $(window).width() < 1170) {
 					$('html').addClass('image-ready');
 				}
+				imageReady();
 				// $('#progress').remove();
 				// clearInterval(dotdotdot);
 			}
@@ -507,32 +523,47 @@ $(function(){
 	if($('.gotop').length){
 		$('.gotop').on('click', function(ev){
 			// $('.gotop .fly ').attr('style', 'animation-name:\'\'');
-			TweenMax.set('.gotop .fly', {
+			var tl = new TimelineMax({
+				paused: true
+			});
+
+			tl.set('.gotop .fly', {
 				top: ev.clientY,
 				position: 'fixed'
 			});
-			$('.gotop .fly').fadeOut(1000, function(){
-				$('.gotop .fly').removeAttr('style');
-			});
-			TweenMax.to('html,body', 1, {
-				scrollTop: 0
-			});
+			tl.add([
+				function(){
+					$('.gotop').removeClass('showup');
+			}]);
+			tl.add([
+				TweenMax.to('html,body', 1, {
+					scrollTop: 0
+				})
+			]);
+			tl.add([
+				TweenMax.to('.gotop .fly', 0.25, {
+					opacity: 0
+				})
+			]);
+			tl.add([
+				function(){
+					$('.gotop .fly').removeAttr('style');
+					$('.gotop').addClass('showup');
+			}]);
+			tl.play();
 
 		});
+
 		var scrollGotoTop = function(){
 			var winHeight = $(window).height();
 
-			var showupArr = [];
-			showupArr.push($('.gotop').addClass('showup delay-1'));
-
 			if($(window).width() >= 768){
-				$.each(showupArr, function(i, d){
-					if( $(window).scrollTop() + winHeight - 100 > d.offset().top){
-						d.addClass('on');
-					}else{
-						d.removeClass('on');
-					}
-				});
+				var d = $('.gotop').addClass('showup delay-1');
+				if( $(window).scrollTop() + winHeight - 100 > d.offset().top){
+					d.addClass('on');
+				}else{
+					d.removeClass('on');
+				}
 			}
 
 		};

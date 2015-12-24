@@ -1,21 +1,47 @@
+#bloom-container{
+  z-index: 10;
+  position: absolute !important;
+  top:720px!important;
+  right:-19px;
+  &.about{
+    top:220px!important;
+  }
+  &.anouncement, &.comment{
+    top:470px!important;
+  }
+  &.news,&.albums,&.blog{
+    top:550px!important;
+  }
+  &.calendar{
+    top:400px!important;
+  }
+  &.contact{
+    top:1050px!important;
+  }
+
+  &.fixed{
+    position: fixed !important;
+    top:220px!important;
+  }
+  &.butt{
+    position: absolute !important;
+  }
+}
+
 .locale-container{
   @media screen and (max-width: 1170px) {
     display: none;
   }
-  top:890px!important;
-  right: -19px !important;
+  position:relative!important;
+  top:0!important;
+  right: 0!important;
   left: auto!important;
   width:40px!important;
   height:40px!important;
-  z-index: 10;
   transition:transform,opacity,right 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s!important;
-  &.fixed{
-    position: fixed !important;
-    top:390px!important;
-  }
 
   &:hover{
-    right:0!important;
+    right:20px!important;
   }
   button.locale-main{
     font-size: 0;
@@ -90,20 +116,16 @@
   @media screen and (max-width: 1170px) {
     display: none;
   }
-  top:750px!important;
-  right: -19px!important;
+  top:100px!important;
+  right: 0!important;
   left: auto!important;
   width:40px!important;
   height:40px!important;
-  z-index: 10;
   transition:transform,opacity,right 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s!important;
-  &.fixed{
-    position: fixed !important;
-    top:250px!important;
-  }
+
 
   &:hover{
-    right:0!important;
+    right:20px!important;
   }
   button.social-main{
     font-size: 0;
