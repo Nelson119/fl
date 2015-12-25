@@ -536,7 +536,7 @@ $(function(){
 					$('.gotop').removeClass('showup');
 			}]);
 			tl.add([
-				TweenMax.to('html,body', 1, {
+				TweenMax.to('body', 1, {
 					scrollTop: 0
 				})
 			]);
@@ -554,11 +554,12 @@ $(function(){
 
 		});
 
+		$('.gotop').addClass('showup delay-1');
 		var scrollGotoTop = function(){
 			var winHeight = $(window).height();
 
 			if($(window).width() >= 768){
-				var d = $('.gotop').addClass('showup delay-1');
+				var d = $('.gotop');
 				if( $(window).scrollTop() + winHeight - 100 > d.offset().top){
 					d.addClass('on');
 				}else{

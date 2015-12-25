@@ -235,9 +235,13 @@
         padding:0 30px 0;
         h4{
           font-weight: 600;
+          height:2.6em;
+          overflow: hidden;
         }
         h5{
           margin-bottom:15px;
+          height:2.6em;
+          overflow: hidden;
         }
         .date{
           color:$main-red;
@@ -323,7 +327,7 @@
   .news{
     background-color:$background-lightgreen;
     .title{
-      margin:60px 0 27px;
+      margin:60px 0 35px;
     }
     h3{
       border-bottom:3px solid $news-green;
@@ -345,6 +349,7 @@
       }
     }
     ul{
+      margin-top: 0;
       @media screen and (max-width: 767px) {
         margin-left:-5px;
         margin-right:-5px;
@@ -395,7 +400,7 @@
   .life{
     position:relative;
     padding-bottom: 40px;
-    background:rgba(0,0,0,0) no-repeat center center/ auto 100% url(../img/home/life-bg.png);
+    background:rgba(0,0,0,0) no-repeat center center/ cover url(../img/home/life-bg.png);
     @media screen and (max-width: 1170px) {
       padding-bottom:10px;
     }
@@ -418,6 +423,7 @@
       }
     }
     ul.box-list{
+      margin-top:15px;
       li{
         .category{
           position:relative;
@@ -488,7 +494,7 @@
     }
     .slick-arrow{
       @media screen and (max-width: 1170px) {
-        display: none;
+        display: none !important;
       }
       position: absolute;
       z-index: 1;
