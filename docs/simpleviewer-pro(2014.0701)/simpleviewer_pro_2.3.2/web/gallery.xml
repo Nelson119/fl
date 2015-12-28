@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<simpleviewergallery
+	
+	title="SimpleViewer-Pro Gallery"
+>
+
+<image imageURL="images/wide.jpg" thumbURL="thumbs/wide.jpg" linkURL="" linkTarget="" >
+	<caption><![CDATA[Welcome to <u><a href="http://www.simpleviewer.net/simpleviewer/pro" target="_blank">SimpleViewer-Pro</a></u>.]]></caption>	
+</image>
+<image imageURL="images/tall.jpg" thumbURL="thumbs/tall.jpg" linkURL="" linkTarget="" >
+	<caption>SimpleViewer-Pro allows you to customize SimpleViewer to your own requirements.</caption>	
+</image>
+<image imageURL="images/wide.jpg" thumbURL="thumbs/wide.jpg" linkURL="" linkTarget="" >
+	<caption>SimpleViewer-Pro has no branding or download link.</caption>	
+</image>
+<image imageURL="images/tall.jpg" thumbURL="thumbs/tall.jpg" linkURL="" linkTarget="" >
+	<caption><![CDATA[Easily build galleries by using <u><a href="http://www.simpleviewer.net/simpleviewer/pro/support/svbuilderpro/" target="_blank">svBuilder-Pro</a></u>. No Flash® IDE needed.]]></caption>	
+</image>
+<image imageURL="images/wide.jpg" thumbURL="thumbs/wide.jpg" linkURL="" linkTarget="" >
+	<caption><![CDATA[Over 150 Additional <u><a href="http://www.simpleviewer.net/simpleviewer/pro/support/pro_options.html" target="_blank">Pro Customization Options</a></u> available.]]></caption>	
+</image>
+<image imageURL="images/tall.jpg" thumbURL="thumbs/tall.jpg" linkURL="http://www.simpleviewer.net" linkTarget="_blank" >
+	<caption>SimpleViewer-Pro supports Universal Playback and can be viewed on Windows, Mac, Linux, iPhone, iPad and Android. Try it and see!</caption>	
+</image>
+<image imageURL="images/wide.jpg" thumbURL="thumbs/wide.jpg" linkURL="" linkTarget="" >
+	<caption><![CDATA[For SimpleViewer-Pro support and documentation, view the <u><a href="http://www.simpleviewer.net/simpleviewer/pro/support" target="_blank">SimpleViewer-Pro Support Page</a></u>.]]></caption>	
+</image>
+<image imageURL="images/tall.jpg" thumbURL="thumbs/tall.jpg" linkURL="" linkTarget="" >
+	<caption></caption>	
+</image>
+<image imageURL="images/wide.jpg" thumbURL="thumbs/wide.jpg" linkURL="" linkTarget="" >
+	<caption></caption>	
+</image>
+<image imageURL="images/tall.jpg" thumbURL="thumbs/tall.jpg" linkURL="" linkTarget="" >
+	<caption></caption>	
+</image>
+<image imageURL="images/wide.jpg" thumbURL="thumbs/wide.jpg" linkURL="" linkTarget="" >
+	<caption></caption>	
+</image>
+<image imageURL="images/tall.jpg" thumbURL="thumbs/tall.jpg" linkURL="" linkTarget="" >
+	<caption></caption>	
+</image>
+<image imageURL="images/wide.jpg" thumbURL="thumbs/wide.jpg" linkURL="" linkTarget="" >
+	<caption></caption>	
+</image>
+<image imageURL="images/tall.jpg" thumbURL="thumbs/tall.jpg" linkURL="" linkTarget="" >
+	<caption></caption>	
+</image>
+<image imageURL="images/wide.jpg" thumbURL="thumbs/wide.jpg" linkURL="" linkTarget="" >
+	<caption></caption>	
+</image>
+<image imageURL="images/tall.jpg" thumbURL="thumbs/tall.jpg" linkURL="" linkTarget="" >
+	<caption></caption>	
+</image>
+<image imageURL="images/wide.jpg" thumbURL="thumbs/wide.jpg" linkURL="" linkTarget="" >
+	<caption></caption>	
+</image>
+<image imageURL="images/tall.jpg" thumbURL="thumbs/tall.jpg" linkURL="" linkTarget="" >
+	<caption></caption>	
+</image>
+<image imageURL="images/wide.jpg" thumbURL="thumbs/wide.jpg" linkURL="" linkTarget="" >
+	<caption></caption>	
+</image>
+<image imageURL="images/tall.jpg" thumbURL="thumbs/tall.jpg" linkURL="" linkTarget="" >
+	<caption></caption>	
+</image>
+<image imageURL="images/wide.jpg" thumbURL="thumbs/wide.jpg" linkURL="" linkTarget="" >
+	<caption></caption>	
+</image>
+<image imageURL="images/tall.jpg" thumbURL="thumbs/tall.jpg" linkURL="" linkTarget="" >
+	<caption></caption>	
+</image>
+</simpleviewergallery>

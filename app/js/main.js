@@ -381,39 +381,39 @@ $(function(){
 	   });
 	}
 
-	if($('.albums .box-list .box').length){
-		var boxes = $('.albums .box-list .box');
+	// if($('.albums .box-list .box').length){
+	// 	var boxes = $('.albums .box-list .box');
 
-		$(boxes).each(function(i, d){
-			$(d).on('click', function(){
-				var photosetId = $(this).attr('data-photoset-id');
-				var url = 'https://api.flickr.com/services/rest/' +
-					'?method=flickr.photosets.getPhotos&api_key=17bf984278b8a7f246b178dd183bcdcf' +
-				    '&photoset_id=' + photosetId + '&user_id=24472667%40N00&format=json';
-				var s = document.createElement('script');
-				s.src = url;
-				$('body').append(s);
-			});
-		});
+	// 	$(boxes).each(function(i, d){
+	// 		$(d).on('click', function(){
+	// 			var photosetId = $(this).attr('data-photoset-id');
+	// 			var url = 'https://api.flickr.com/services/rest/' +
+	// 				'?method=flickr.photosets.getPhotos&api_key=17bf984278b8a7f246b178dd183bcdcf' +
+	// 			    '&photoset_id=' + photosetId + '&user_id=24472667%40N00&format=json';
+	// 			var s = document.createElement('script');
+	// 			s.src = url;
+	// 			$('body').append(s);
+	// 		});
+	// 	});
 
-		window.jsonFlickrApi = function(data){
-			var photos = null;
-			photos = data.photoset.photo;
-			var pho = [];
-			$(photos).each(function(i, item){
-				pho.push({
-					src: 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '.jpg',
-					type: 'image/jpeg',
-					thumb: 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_m.jpg'
-				});
+	// 	window.jsonFlickrApi = function(data){
+	// 		var photos = null;
+	// 		photos = data.photoset.photo;
+	// 		var pho = [];
+	// 		$(photos).each(function(i, item){
+	// 			pho.push({
+	// 				src: 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '.jpg',
+	// 				type: 'image/jpeg',
+	// 				thumb: 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_m.jpg'
+	// 			});
 
-			});
-			$('body').lightGallery({
-				dynamic: true,
-				dynamicEl: pho
-			});
-		};
-	}
+	// 		});
+	// 		$('body').lightGallery({
+	// 			dynamic: true,
+	// 			dynamicEl: pho
+	// 		});
+	// 	};
+	// }
 
 
 	/*
