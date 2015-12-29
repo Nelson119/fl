@@ -186,12 +186,10 @@ $(function(){
 			cssEase: 'ease-out'
 		});
 		$('#kvm ul').slick({
-			// dots: true,
 			infinite: true,
 			slidesToShow: 1,
 			variableWidth: true,
 			centerMode: true,
-			// autoplay: true,
 			autoplaySpeed: 3000,
 			pauseOnHover: true,
 			speed: 750,
@@ -289,17 +287,22 @@ $(function(){
         var body = document.getElementsByTagName('body')[0];
         body.appendChild(script);
 
+		var mapicon = $('.map-icon').clone();
+		$('.map-icon').remove();
+
         function drawMap(data) {
             var rows = data.rows;
             for (var i in rows) {
 	            var pos =  {lat:rows[i][2].geometry.coordinates[1], lng:rows[i][2].geometry.coordinates[0]};
+	            var pin = $('<div></div').append(mapicon.clone());
+	            $('img', pin).attr('src', $('img', pin).attr('src') + rows[i][3]);
 	            var marker = new Marker({
 				    map: map,
 				    position: pos,
 				    icon: {
 				        path: ''
 				    },
-				    map_icon_label: '<span class="map-icon"><img src=\'' + rows[i][3] + '\'></span>'
+				    map_icon_label: pin.html()
 				});
 				marker.name = rows[i][1];
 				marker.description = rows[i][0];
@@ -325,9 +328,9 @@ $(function(){
 				});
 
 				// assuming you also want to hide the infowindow when user mouses-out
-				marker.addListener('mouseout', function() {
-				    markerInfoWindow.close();
-				});
+				// marker.addListener('mouseout', function() {
+				//     markerInfoWindow.close();
+				// });
             }
 			$('html').addClass('image-ready');
         }
@@ -361,7 +364,6 @@ $(function(){
 				slidesToShow: 4,
 				slidesToScroll: 4,
 				variableWidth: false,
-				// autoplay: true,
 				autoplaySpeed: 3000,
 				pauseOnHover: true,
 				speed: 750
@@ -380,40 +382,6 @@ $(function(){
 			$(this).parents('li').addClass('selected').siblings().removeClass('selected');
 	   });
 	}
-
-	// if($('.albums .box-list .box').length){
-	// 	var boxes = $('.albums .box-list .box');
-
-	// 	$(boxes).each(function(i, d){
-	// 		$(d).on('click', function(){
-	// 			var photosetId = $(this).attr('data-photoset-id');
-	// 			var url = 'https://api.flickr.com/services/rest/' +
-	// 				'?method=flickr.photosets.getPhotos&api_key=17bf984278b8a7f246b178dd183bcdcf' +
-	// 			    '&photoset_id=' + photosetId + '&user_id=24472667%40N00&format=json';
-	// 			var s = document.createElement('script');
-	// 			s.src = url;
-	// 			$('body').append(s);
-	// 		});
-	// 	});
-
-	// 	window.jsonFlickrApi = function(data){
-	// 		var photos = null;
-	// 		photos = data.photoset.photo;
-	// 		var pho = [];
-	// 		$(photos).each(function(i, item){
-	// 			pho.push({
-	// 				src: 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '.jpg',
-	// 				type: 'image/jpeg',
-	// 				thumb: 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_m.jpg'
-	// 			});
-
-	// 		});
-	// 		$('body').lightGallery({
-	// 			dynamic: true,
-	// 			dynamicEl: pho
-	// 		});
-	// 	};
-	// }
 
 
 	/*
