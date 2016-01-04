@@ -578,8 +578,12 @@ h6{
 	ul{
 		display: inline-block;
 		li{
-			width:20px;
+			min-width:20px;
 			height:20px;
+			> a, > span{
+			    background-color: transparent;
+    			border: 0;
+			}
 		}
     	@media screen and (max-width: 1170px) {
     		opacity: 0;
@@ -637,6 +641,13 @@ h6{
 	          background-color:$main-red;
 	        }
 	      }
+		    .prev,.next{
+		      color:$main-red!important;
+		      &:hover,&:active,&:focus{
+		        color:$main-red!important;
+		        background-color:inherit!important;
+		      }
+		    }
 	    }
 	}
 	&.orange{
@@ -662,6 +673,13 @@ h6{
 	          background-color:$main-orange;
 	        }
 	      }
+		    .prev,.next{
+		      color:$main-orange!important;
+		      &:hover,&:active,&:focus{
+		        color:$main-orange!important;
+		        background-color:inherit!important;
+		      }
+		    }
 	    }
 	}
 	&.newsgreen{
@@ -687,6 +705,13 @@ h6{
 	          background-color:$news-green;
 	        }
 	      }
+		    .prev,.next{
+		      color:$news-green!important;
+		      &:hover,&:active,&:focus{
+		        color:$news-green!important;
+		        background-color:inherit!important;
+		      }
+		    }
 	    }
 	}
 }

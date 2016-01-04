@@ -542,6 +542,17 @@ $(function(){
 		});
 	}
 
+	if($('.filter-dropdown').length){
+		$('.filter-dropdown li').on('click', function(){
+			console.log($('#dropdownSchool').val() && $('#dropdownYear').val());
+			console.log($('#dropdownSchool').val());
+			console.log($('#dropdownYear').val());
+			if($('#dropdownSchool').val() && $('#dropdownYear').val()){
+				location.href = $('.filter-link').attr('href') + $('#dropdownSchool').val() + '/' + $('#dropdownYear').val() + '/';
+			}
+		});
+	}
+
 	$(window).trigger('resize');
 });
 
