@@ -58,17 +58,17 @@ $(function(){
 		    $('.locale-item-btn:eq(0)').attr('onclick','doGTranslate(\'zh-TW|zh-CN\')');
 		    $('.locale-item-btn:eq(1)').attr('onclick','doGTranslate(\'zh-TW|zh-TW\')');
 		    $('.social-item-btn:eq(0)').on('click', function(i, d){
-		    	var url = location.href ;
+		    	var url = location.href;
 		    	var title = $('h1').text();
 		    	window.open('https://www.facebook.com/sharer.php?u='+encodeURIComponent(url)+'&t='+encodeURIComponent(title));
 		    });
 		    $('.social-item-btn:eq(1)').on('click', function(i, d){
-		    	var url = location.href ;
+		    	var url = location.href;
 		    	var title = $('h1').text();
 		    	window.open('https://plus.google.com/share?url='+encodeURIComponent(url)+'&title='+encodeURIComponent(title));
 		    });
 		    $('.social-item-btn:eq(2)').on('click', function(i, d){
-		    	var url = location.href ;
+		    	var url = location.href;
 		    	var title = $('h1').text();
 		    	window.open('http://line.me/R/msg/text/?'+encodeURIComponent(url+'\r\n'+title));
 		    });
@@ -76,7 +76,7 @@ $(function(){
 		    	window.open('https://www.youtube.com/user/filexkids');
 		    });
 		    $('.social-item-btn:eq(4)').on('click', function(i, d){
-		    	var url = location.href ;
+		    	var url = location.href;
 		    	var title = $('h1').text();
 		    	window.open('http://share.baidu.com/s?type=text&searchPic=1&sign=on&to=tsina&url='+url+'&title='+title+'&key=595885820');
 		    });
