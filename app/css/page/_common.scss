@@ -70,7 +70,9 @@ ul.box-list{
     margin:45px -19px 0;
 }
 ul.box-list,ul.list{
+	min-height:1630px;
 	@media screen and (max-width: 1170px) {
+		min-height:0;
 		padding-bottom:30px;
 	}
 	@media screen and (max-width: 767px) {
@@ -122,6 +124,9 @@ ul.box-list,ul.list{
 			}
 			figure{
 				position:relative;
+				padding-top:percentage(230/350);
+				overflow: hidden;
+				height: 0;
 				&:after{
 					position:absolute;
 					top:0;
@@ -132,8 +137,13 @@ ul.box-list,ul.list{
 					content:' ';
 					opacity: 0;
 					transition-duration: 0.35s;
+					overflow: hidden;
 				}
 				img{
+					top:0;
+					left:0;
+					position:absolute;
+					width:100%;
 					transition-duration:0.25s;
 				}
 			}
@@ -358,6 +368,9 @@ h6{
 
     .recent-posts{
       	margin-bottom:60px;
+      	li{
+      		width:100%;
+      	}
       	h4{
         	width:100%;
 	        margin:0;
@@ -416,6 +429,65 @@ h6{
 		iframe{
 			width:100%;
 			max-width: 100%;
+		}
+	}
+
+	#calendari.orange{
+
+		th {
+		    background-color: $main-orange;
+		}
+		td:nth-child(6)>a {
+		    color: $main-orange;
+		}
+		td.avui>a {
+	        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) inset;
+		    background-color: rgba(253, 133, 68, 0.5);
+		}
+		td >a{
+			border:0;
+		}
+		td:last-child>a,
+		td:nth-child(6)>a {
+		    color: $main-red;
+		}
+
+		td > a:hover {
+		    background: rgba(253, 133, 68, 0.75);
+		    color: #fff;
+		}
+		a.highlight{
+			color:#fff;
+		    background-color: rgba(253, 133, 68, 0.5);
+		}
+	}
+	#calendari.newsgreen{
+
+		th {
+		    background-color: $news-green;
+		}
+		td:nth-child(6)>a {
+		    color: $news-green;
+		}
+		td.avui>a {
+		    background-color: rgba(180, 219, 63, 0.5);
+	        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) inset;
+		}
+		td >a{
+			border:0;
+		}
+		td:last-child>a,
+		td:nth-child(6)>a {
+		    color: $main-red;
+		}
+
+		td > a:hover {
+		    background: rgba(180, 219, 63, 0.75);
+		    color: #fff;
+		}
+		a.highlight{
+			color:#fff;
+		    background-color: rgba(180, 219, 63, 0.5);
 		}
 	}
 }
@@ -547,8 +619,10 @@ h6{
 		letter-spacing: 1px;
 	}
 	.prev{
+	    margin-right: 10px;
 		display: inline-block;
     	@media screen and (max-width: 1170px) {
+			margin:0;
     		color:$transparent !important;
 			position:relative;
 			float: left;
@@ -571,7 +645,7 @@ h6{
 			}
 		}
 	}
-	a{
+	a,span{
 		font-weight: bold;
 		display: block;
 	}
@@ -586,18 +660,29 @@ h6{
 			}
 		}
     	@media screen and (max-width: 1170px) {
-    		opacity: 0;
-			pointer-events: none;
-			cursor: default;
-			float: left;
+		    text-align: left;
+			position: relative;
+			width: 100%;
+			a,span{
+    			opacity: 0;
+    			&.next,&.prev{
+    				opacity: inherit;
+    			}
+			}
+			li:last-child{
+				position:absolute;
+				right:0;
+			}
 		}
 	}
 	.next{
+	    margin-left: 10px;
 		display: inline-block;
     	@media screen and (max-width: 1170px) {
     		color:$transparent !important;
 			position:relative;
 			float: right;
+			margin:0;
 			&:before{
 				padding:5px 10px;
 	    		position:absolute;
@@ -634,9 +719,9 @@ h6{
 	      }
 	    }
 	    ul{
-	      a{
+	      a,span{
 	        color:$main-red;
-	        &:hover,&:active,&:focus{
+	        &.current,&:hover,&:active,&:focus{
 	          color:$main-white;
 	          background-color:$main-red;
 	        }
@@ -666,9 +751,9 @@ h6{
 	      }
 	    }
 	    ul{
-	      a{
+	      a,span{
 	        color:$main-orange;
-	        &:hover,&:active,&:focus{
+	        &.current,&:hover,&:active,&:focus{
 	          color:$main-white;
 	          background-color:$main-orange;
 	        }
@@ -698,9 +783,9 @@ h6{
 	      }
 	    }
 	    ul{
-	      a{
+	      a,span{
 	        color:$news-green;
-	        &:hover,&:active,&:focus{
+	        &.current,&:hover,&:active,&:focus{
 	          color:$main-white;
 	          background-color:$news-green;
 	        }
@@ -727,15 +812,20 @@ h6{
 			margin:0;
 			position:relative;
 	        @media screen and (max-width: 1170px) {
-				margin:0;
+		    	margin: 50px 0 0 0;
 	        }
 			.author{
 				position:absolute;
+				background-size:cover;
+				background-position:center;
 				right: -50px;
 				top:50%;
 				margin-top:-50px;
 				width:100px;
 				height:100px;
+			    border-radius: 50%;
+			    border-style: solid;
+			    border-width: 4px;
 			}
 		}
 		&.newsgreen {
@@ -753,6 +843,9 @@ h6{
 			aside.text-content{
 				border-color:$main-green;
 			}
+			.author{
+			    border-color:$main-green;
+			}
 		}
 		&.yellow {
 			h3{
@@ -761,6 +854,9 @@ h6{
 			aside.text-content{
 				border-color:$main-yellow;
 			}
+			.author{
+			    border-color:$main-yellow;
+			}
 		}
 		&.blue {
 			h3{
@@ -768,6 +864,9 @@ h6{
 			}
 			aside.text-content{
 				border-color:$main-blue;
+			}
+			.author{
+			    border-color:$main-blue;
 			}
 		}
 		h4.tagline{
@@ -804,20 +903,58 @@ h6{
 				&.yellow{
 					svg polygon{fill:$main-yellow;}
 				}
+				&.red{
+					svg polygon{fill:$main-red;}
+				}
 			}
 		}
 		aside.text-content{
+			@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/type";
+		    .h1, .h2, .h3, .h4, .h5, .h6, p, h1, h2, h3, h4, h5, h6{
+		    	color:inherit;
+		    	line-height: 1.4em;
+	    		letter-spacing: 1px;
+		    	border:0;
+		    	padding:0;
+		    	min-height:0;
+		    	max-height:none;
+		    	background:inherit;
+		    	
+		    	&:before,&:after{
+		    		border:0;
+		    		content:'';
+		    		height: auto;
+		    		width:auto;
+		    		margin:0;
+		    		padding:0;
+		    	}
+		    	span{
+		            &:before{
+		            	display: none;
+		            }
+		    	}
+		        span,em,i,a,label,input{
+		    		letter-spacing: inherit;
+		            font-size:inherit;
+		    	}
+		    }
+		    img{
+		    	max-width: 100%;
+		    	height: auto;
+		    }
 			padding:30px 0;
 			border-width:0;
 			border-top-width:1px;
 			border-bottom-width:1px;
 			border-style:solid;
+	    	text-align: justify;
 			p{
 				line-height:1.8em;
 				margin:0;
 			}
 			img{
-				width:100%;
+				max-width:100%;
+				display: block;
 			}
 		}
 		.like-button{
@@ -899,6 +1036,15 @@ h6{
 	@media screen and (max-width: 1170px) {
 		overflow:hidden;
 	}
+}
+.wpcf7{
+	margin-top:25px;
+}
+.wpcf7-response-output.wpcf7-validation-errors{
+	display:none;
+}
+.screen-reader-response,.wpcf7-validation-errors{
+	color:$main-red;
 }
 
 @import "home";

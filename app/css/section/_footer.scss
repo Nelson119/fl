@@ -5,6 +5,11 @@ footer {
 		background-color: $background-lightyellow;
 		ul{
 			margin:20px 85px;
+			li{
+				overflow: hidden;
+				max-height: 70px;
+				margin-right: 40px;
+			}
 			a{
 				display: block;
 				img{
@@ -191,7 +196,7 @@ footer {
 		@media screen and (max-width: 1170px) {
 			display: none;
 		}
-		background:url(../img/gotop/top-2.png) no-repeat center bottom;
+		background:url(../img/gotop/top-2.png) no-repeat center 13px;
 		position:absolute;
 		right:0;
 		top:-200px;

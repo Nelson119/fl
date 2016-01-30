@@ -32,7 +32,10 @@
     <script src="/bower_components/detectizr/dist/detectizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body>
+  <body data-archive-post-type="album01" data-archive-pagename="albums" >
+    <script> 
+    var highlightDates='["2016\/01\/04","2016\/01\/04","2016\/01\/04","2016\/01\/04","2016\/01\/04","2016\/01\/04","2016\/01\/04","2016\/01\/04","2016\/01\/04","2016\/01\/04","2016\/01\/04","2015\/12\/31","2015\/12\/31","2015\/12\/28"]'
+    </script>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -332,7 +335,7 @@
               <h3 class="fontsize-20">CALENDAR</h3>
             </aside>
             <figure class="calendar">
-              <img src="img/gallery/calendar.png">
+              <div id="calendari" class="orange"></div>
             </figure>
             <aside class="title orange">
               <h3 class="fontsize-20">Recent Posts</h3>

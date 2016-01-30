@@ -1,9 +1,10 @@
 'use strict';
 /*eslint-disable new-cap, no-unused-vars, 
 	no-use-before-define, no-trailing-spaces, space-infix-ops, comma-spacing,
-	no-mixed-spaces-and-tabs, no-multi-spaces, camelcase, no-loop-func,
-	key-spacing */
-/*global  $, BloomingMenu, TweenMax, TimelineMax, google, Marker */
+	no-mixed-spaces-and-tabs, no-multi-spaces, camelcase, no-loop-func,no-empty,
+	key-spacing ,curly, no-shadow, no-return-assign, no-redeclare, no-unused-vars,
+	eqeqeq, no-extend-native*/
+/*global  $, BloomingMenu, TweenMax, TimelineMax, google, Marker, _, highlightDates */
 
 $(function(){
 
@@ -57,12 +58,12 @@ $(function(){
 		    });
 		    $('.locale-item-btn:eq(0)').attr('onclick','doGTranslate(\'zh-TW|zh-CN\')');
 		    $('.locale-item-btn:eq(1)').attr('onclick','doGTranslate(\'zh-TW|zh-TW\')');
-		    $('.social-item-btn:eq(0)').on('click', function(i, d){
+		    $('.social-item-btn:eq(4)').on('click', function(i, d){
 		    	var url = location.href;
 		    	var title = $('h1').text();
 		    	window.open('https://www.facebook.com/sharer.php?u='+encodeURIComponent(url)+'&t='+encodeURIComponent(title));
 		    });
-		    $('.social-item-btn:eq(1)').on('click', function(i, d){
+		    $('.social-item-btn:eq(3)').on('click', function(i, d){
 		    	var url = location.href;
 		    	var title = $('h1').text();
 		    	window.open('https://plus.google.com/share?url='+encodeURIComponent(url)+'&title='+encodeURIComponent(title));
@@ -72,10 +73,10 @@ $(function(){
 		    	var title = $('h1').text();
 		    	window.open('http://line.me/R/msg/text/?'+encodeURIComponent(url+'\r\n'+title));
 		    });
-		    $('.social-item-btn:eq(3)').on('click', function(i, d){
+		    $('.social-item-btn:eq(1)').on('click', function(i, d){
 		    	window.open('https://www.youtube.com/user/filexkids');
 		    });
-		    $('.social-item-btn:eq(4)').on('click', function(i, d){
+		    $('.social-item-btn:eq(0)').on('click', function(i, d){
 		    	var url = location.href;
 		    	var title = $('h1').text();
 		    	window.open('http://share.baidu.com/s?type=text&searchPic=1&sign=on&to=tsina&url='+url+'&title='+title+'&key=595885820');
@@ -409,6 +410,225 @@ $(function(){
 	   });
 	}
 
+	var mesos = [
+	    '一月',
+	    '二月',
+	    '三月',
+	    '四月',
+	    '五月',
+	    '六月',
+	    '七月',
+	    '八月',
+	    '九月',
+	    '十月',
+	    '十一月',
+	    '十二月'
+	];
+
+	var dies = [
+	    '星期日',
+	    '星期一',
+	    '星期二',
+	    '星期三',
+	    '星期四',
+	    '星期五',
+	    '星期六'
+	];
+
+	var dies_abr = [
+	    '日',
+	    '一',
+	    '二',
+	    '三',
+	    '四',
+	    '五',
+	    '六'
+	];
+
+	Number.prototype.pad = function(num) {
+	    var str = '';
+	    for(var i = 0; i < (num-this.toString().length); i++)
+	        str += '0';
+	    return str += this.toString();
+	};
+
+	function calendari(widget, data)
+	{
+		var postType = $('body').attr('data-archive-post-type');
+		var school = /.*[?|&]school=(.*)[&|#]+.*/ig.test(location.href) ? decodeURIComponent(location.href.replace(/.*[?|&]school=(.*)[&|#]+.*/ig,'$1')) : '';
+		var pagename = $('body').attr('data-archive-pagename');
+	    var siteUrl = $('h1 a').attr('href');
+
+	    if(!pagename && !postType){
+	    	postType = 'post';
+	    }
+
+	    var original = widget.getElementsByClassName('actiu')[0];
+
+	    if(typeof original === 'undefined')
+	    {
+	        original = document.createElement('table');
+	        original.setAttribute('data-actual',
+				      data.getFullYear() + '/' +
+				      data.getMonth().pad(2) + '/' +
+				      data.getDate().pad(2));
+	        widget.appendChild(original);
+	    }
+
+	    var diff = data - new Date(original.getAttribute('data-actual'));
+
+	    diff = new Date(diff).getMonth();
+
+	    var e = document.createElement('table');
+
+	    e.className = diff  === 0 ? 'amagat-esquerra' : 'amagat-dreta';
+	    e.innerHTML = '';
+
+	    widget.appendChild(e);
+
+	    e.setAttribute('data-actual',
+	                   data.getFullYear() + '/' +
+	                   data.getMonth().pad(2) + '/' +
+	                   data.getDate().pad(2));
+
+	    var fila = document.createElement('tr');
+	    var titol = document.createElement('th');
+	    titol.setAttribute('colspan', 7);
+
+	    var boto_prev = document.createElement('button');
+	    boto_prev.className = 'boto-prev';
+	    boto_prev.innerHTML = '&#9666;';
+
+	    var boto_next = document.createElement('button');
+	    boto_next.className = 'boto-next';
+	    boto_next.innerHTML = '&#9656;';
+
+	    titol.appendChild(boto_prev);
+
+	    var anyUrl = '';
+	    if(!pagename){
+	    	anyUrl = siteUrl + '?post_type=' + postType + '&filter_year=' + data.getFullYear();
+	    }else{
+	    	anyUrl = siteUrl + '?pagename=' + pagename + '&school=' + school + '&filter_year=' + data.getFullYear();
+	    }
+	    titol.appendChild(document.createElement('a')).innerHTML = 
+
+	        mesos[data.getMonth()] + '<a class="any" href="'+anyUrl+'">' + data.getFullYear() + '</a>';
+
+	    titol.appendChild(boto_next);
+
+	    boto_prev.onclick = function() {
+	        data.setMonth(data.getMonth() - 1);
+	        calendari(widget, data);
+	    };
+
+	    boto_next.onclick = function() {
+	        data.setMonth(data.getMonth() + 1);
+	        calendari(widget, data);
+	    };
+
+	    fila.appendChild(titol);
+	    e.appendChild(fila);
+
+	    fila = document.createElement('tr');
+
+	    for(var i = 1; i < 7; i++)
+	    {
+	        fila.innerHTML += '<th>' + dies_abr[i] + '</th>';
+	    }
+
+	    fila.innerHTML += '<th>' + dies_abr[0] + '</th>';
+	    e.appendChild(fila);
+
+	    /* Obtinc el dia que va acabar el mes anterior */
+	    var inici_mes =
+	        new Date(data.getFullYear(), data.getMonth(), -1).getDay();
+
+	    var actual = new Date(data.getFullYear(),
+				  data.getMonth(),
+				  -inici_mes);
+
+	    /* 6 setmanes per cobrir totes les posiblitats
+	     *  Quedaria mes consistent alhora de mostrar molts mesos 
+	     *  en una quadricula */
+	    for(var s = 0; s < 6; s++)
+	    {
+	        var fila = document.createElement('tr');
+
+	        for(var d = 1; d < 8; d++)
+	        {
+		    var cela = document.createElement('td');
+		    var a = document.createElement('a');
+
+		    var celaUrl = '';
+		    if(!pagename){
+		    	celaUrl = siteUrl + '?post_type=' + postType + '&filter_year=' + 
+	    		actual.getFullYear() +
+	    		'&filter_month=' + (actual.getMonth() + 1) +
+	    		'&filter_day=' + actual.getDate();
+		    }else{
+		    	celaUrl = siteUrl + '?pagename=' + pagename + '&school=' + school + 
+		    	'&filter_year=' + actual.getFullYear() +
+	    		'&filter_month=' + (actual.getMonth() + 1) +
+	    		'&filter_day=' + actual.getDate();
+		    }
+	    	var dateStr = actual.getFullYear() + '/' + (actual.getMonth() + 1).pad(2) + '/' + actual.getDate().pad(2);
+		    a.href = 
+		    cela.appendChild(a);
+
+	            a.innerHTML = actual.getDate();
+	            a.href = celaUrl;
+
+	            if(actual.getMonth() !== data.getMonth())
+	                cela.className = 'fora';
+
+	            /* Si es avui el decorem */
+	            if(new Date().getDate() == actual.getDate() &&
+				       new Date().getMonth() == actual.getMonth() &&
+				       new Date().getFullYear() == actual.getFullYear())
+					cela.className = 'avui';
+
+		    	if(typeof highlightDates != 'undefined'){
+		    		try{
+		    			var hl = $.parseJSON(highlightDates);
+		    			if(_.contains(hl, dateStr)){
+							$(a).addClass('highlight');
+							console.log(dateStr);
+		    			}
+
+		    		}catch(e){}
+		    	}
+			    actual.setDate(actual.getDate()+1);
+	            fila.appendChild(cela);
+	        }
+
+	        e.appendChild(fila);
+	    }
+
+	    setTimeout(function() {
+	        e.className = 'actiu';
+	        original.className +=
+	        diff === 0 ? ' amagat-dreta' : ' amagat-esquerra';
+	    }, 20);
+
+	    original.className = 'inactiu';
+
+	    setTimeout(function() {
+	        var inactius = document.getElementsByClassName('inactiu');
+	        for(var i = 0; i < inactius.length; i++)
+	            widget.removeChild(inactius[i]);
+	    }, 1000);
+
+
+
+	}
+
+	if($('#calendari').length){
+
+
+		calendari(document.getElementById('calendari'), new Date());
+
+	}
 
 	/*
 	* Replace all SVG images with inline SVG
@@ -573,17 +793,73 @@ $(function(){
 		});
 	}
 
+	if($('.form').length){
+		var wpcf7 = $('div[id^=wpcf7]');
+		var form = $('.form form');
+		$('button', form).unbind('click').on('click', function(e){
+		  e.preventDefault();
+		  e.stopPropagation();
+		  $('input', form).each(function(i,d){
+		    $('input[name='+d.name+']', wpcf7).val(d.value);
+		  });
+			$('.options input').each(function(i,d){
+			  if(d.checked){
+			    $('input[name='+d.name+']').val(d.value);
+			  }
+			});
+		  $('textarea',form).each(function(i,d){
+		    $('textarea[name='+d.name+']', wpcf7).val($(d).val());
+		  });
+		  $('.wpcf7-form').submit();
+		});
+	}
 	if($('.filter-dropdown').length){
 		$('.filter-dropdown li').on('click', function(){
-			console.log($('#dropdownSchool').val() && $('#dropdownYear').val());
-			console.log($('#dropdownSchool').val());
-			console.log($('#dropdownYear').val());
+			var postType = $('body').attr('data-archive-post-type');
+			var pagename = $('body').attr('data-archive-pagename');
+			var school = _.contains($('#dropdownSchool').val(),'全部') ? '' : $('#dropdownSchool').val();
+			var year = _.contains($('#dropdownYear').val(),'全部') ? '' : $('#dropdownYear').val();
+		    var siteUrl = $('h1 a').attr('href');
 			if($('#dropdownSchool').val() && $('#dropdownYear').val()){
-				location.href = $('.filter-link').attr('href') + $('#dropdownSchool').val() + '/' + $('#dropdownYear').val() + '/';
+				// var url = siteUrl + '?pagename=' + $('body').attr('data-archive-pagename') + 
+				// 	'&school=' + school + 
+				// 	'&filter_year=' + year;
+				// 	console.log(url);
+				location.href = siteUrl + '?pagename=' + $('body').attr('data-archive-pagename') + 
+					'&school=' + school + 
+					'&filter_year=' + year;
 			}
 		});
 	}
+	
+	$('.sidebar.newsgreen *.orange').removeClass('orange').addClass('newsgreen');
 
 	$(window).trigger('resize');
+
+	if($('footer .link ul').length){
+		var minimum = 8;
+		var slides = $('footer .link ul li').length;
+
+		while((minimum-=slides)>0){
+		  $('footer .link ul li').clone().appendTo($('footer .link ul'));
+		}
+		$('footer .link ul').slick({
+			dots:false,
+			arrows:false,
+			infinite: true,
+			slidesToShow: 4,
+			slidesToScroll: 1,
+			variableWidth: true,
+			autoplaySpeed: 5000,
+			autoplay: true,
+			pauseOnHover: true,
+			speed: 750,
+			cssEase: 'ease-in-out'
+		});
+
+	}
+	if($('.ib-crumb a[href*=category][href*=anounce]').length){
+		$('.ib-crumb a[href*=category][href*=anounce]').attr('href',$('.ib-crumb a[href*=category][href*=anounce]').attr('href').replace(/\/category/ig,''));	
+	}
 });
 

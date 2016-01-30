@@ -94,6 +94,11 @@
         background-image:url(../img/home/life-next.png);
       }
     }
+    .slick-prev,.slick-next {
+      top:50%;
+      margin-top:-60px;
+    }
+    
   }
   .box{
     padding-bottom:30px;
