@@ -1,0 +1,97 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>菲力兒童文教機構 | FILEXKIDS EDUCATION INSTITUTE.</title>
+
+    <link rel="apple-touch-icon" href="img/nav/favi.png">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/nav/favi.png">
+
+
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css css/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/superfish/dist/css/superfish.css" />
+    <link rel="stylesheet" href="/bower_components/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" href="/bower_components/slick-carousel/slick/slick-theme.css" />
+    <link rel="stylesheet" href="/bower_components/animate.css/animate.css" />
+    <link rel="stylesheet" href="/bower_components/lightgallery/dist/css/lightgallery.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css css/main.css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- endbuild -->
+    
+    <!-- build:js js/mdzr.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="/bower_components/detectizr/dist/detectizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body  data-archive-pagename="news" data-archive-post-type="" >
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+ 
+      <form id="participant-form">
+        <input name="sFBUID" value="1447149769">
+        <input name="sFBDisplayName" value="Nelson Chen">
+        <input name="sDay" value="11/22">
+        <input name="sDayType" value="1">
+        <input name="sDayName" value="idunknow">
+        <input name="sDayContent" value="iduncare">
+        <input name="sAD" value="fb-share-post">
+        <input type="submit" value="send">
+      </form>
+    
+    <!-- build:js js/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/gsap/src/uncompressed/TweenMax.js"></script>
+    <script src="/bower_components/lodash/lodash.js"></script>
+    <script src="/bower_components/superfish/dist/js/superfish.js"></script>
+    <script src="/bower_components/superfish/dist/js/hoverIntent.js"></script>
+    <script src="/bower_components/slick-carousel/slick/slick.min.js"></script>
+    <script src="/bower_components/jquery.easing/js/jquery.easing.js"></script>
+    <script src="/bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="/bower_components/flickr-api/flickr.js"></script>
+    <script src="/bower_components/lightgallery/dist/js/lightgallery.min.js"></script>
+    <!-- endbower -->
+    <script src="/node_modules/blooming-menu/build/blooming-menu.min.js"></script>
+    <script src="/bower_components/map-icons/dist/js/map-icons.js"></script>
+    <script src="js/jquery.checkradios.min.js"></script>
+    <!-- endbuild -->
+    
+    <script>
+    
+	$('#participant-form').on('submit', function(e){
+
+		var postObject = {};
+		$($(this).serializeArray()).each(function(index, field){
+			postObject[field.name] = field.value;
+		});
+
+		$.ajax({
+			url: 'http://localhost:60671/SaveData.ashx',
+			// type: 'json',
+			method: 'post',
+			data: postObject,
+			success: function(r){
+				console.log(r);
+			}
+		});
+
+		e.stopPropagation();
+
+		e.preventDefault();
+
+		return false;
+	});
+	</script>
+  </body>
+</html>
