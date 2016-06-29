@@ -1,0 +1,68 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>菲力兒童文教機構 | FILEXKIDS EDUCATION INSTITUTE.</title>
+
+    <link rel="apple-touch-icon" href="img/nav/favi.png">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/nav/favi.png">
+
+
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/vendor.css">
+
+    <link rel="stylesheet" href="css/main.css">
+    
+    <script src="js/mdzr.js"></script>
+  </head>
+  <body  data-archive-pagename="news" data-archive-post-type="" >
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+ 
+      <form id="participant-form">
+        <input name="sFBUID" value="1447149769">
+        <input name="sFBDisplayName" value="Nelson Chen">
+        <input name="sDay" value="11/22">
+        <input name="sDayType" value="1">
+        <input name="sDayName" value="idunknow">
+        <input name="sDayContent" value="iduncare">
+        <input name="sAD" value="fb-share-post">
+        <input type="submit" value="send">
+      </form>
+    
+    <script src="js/vendor.js"></script>
+    
+    <script>
+    
+	$('#participant-form').on('submit', function(e){
+
+		var postObject = {};
+		$($(this).serializeArray()).each(function(index, field){
+			postObject[field.name] = field.value;
+		});
+
+		$.ajax({
+			url: 'http://localhost:60671/SaveData.ashx',
+			// type: 'json',
+			method: 'post',
+			data: postObject,
+			success: function(r){
+				console.log(r);
+			}
+		});
+
+		e.stopPropagation();
+
+		e.preventDefault();
+
+		return false;
+	});
+	</script>
+  </body>
+</html>
