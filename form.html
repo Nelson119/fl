@@ -1,0 +1,38 @@
+<form>
+  <input name="sFBDisplayName" value="Nelson Chen">
+  <input name="sDay" value="11/22">
+  <input name="sDayType" value="1">
+  <input name="sDayName" value="idunknow">
+  <input name="sDayContent" value="iduncare">
+  <input name="sAD" value="fb-share-post">
+  <input type="submit" value="send">
+</form>
+<script>
+  $(function(){
+  
+  	$('#participant-form').on('submit', function(e){
+  
+  		var postObject = {};
+  		$($(this).serializeArray()).each(function(index, field){
+  			postObject[field.name] = field.value;
+  		});
+  
+  		$.ajax({
+  			url: 'SaveData.ashx',
+  			// type: 'json',
+  			method: 'post',
+  			data: postObject,
+  			success: function(r){
+  				console.log(r);
+  			}
+  		});
+  
+  		e.stopPropagation();
+  
+  		e.preventDefault();
+  
+  		return false;
+  	});
+  });
+
+</script>
